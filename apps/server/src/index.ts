@@ -3,6 +3,7 @@ import { Server } from 'socket.io';
 import { createServer } from 'http';
 import { onConnect } from './events/onConnect';
 import { onUpdateClients } from './events/onUpdateClients';
+import { RoomManager } from './RoomManager';
 
 const app = express();
 app.use(express.static('./public'));
@@ -12,6 +13,7 @@ const server = createServer(app).listen(port);
 console.log(`Server listening on port ${port}`);
 
 const io = new Server(server);
+RoomManager.setIo(io);
 
 io.on('connection', onConnect);
 
