@@ -16,7 +16,11 @@
     "pinia": "^2.0.36",
     "socket.io-client": "^4.6.1",
     "vue": "^3.3.2",
+<<<<<<< HEAD
     "vue-router": "^4.2.1"
+=======
+    "shared": "../shared"
+>>>>>>> 556ea9674eb6f2dcb2f189d14425a7d9b1708fa1
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

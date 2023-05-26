@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PhaserRenderer from './components/GameRenderer.vue';
 import { useGameStore } from './stores/game';
-import type { Curve, Player } from './types';
+import type { Player } from '../../shared/types/Player';
 
 const gameStore = useGameStore();
 const liam: Player = {

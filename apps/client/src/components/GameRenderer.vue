@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, defineProps } from 'vue'
+import { ref, onMounted } from 'vue'
 import Phaser from 'phaser'
 import * as SceneMap from "../scenes";
 

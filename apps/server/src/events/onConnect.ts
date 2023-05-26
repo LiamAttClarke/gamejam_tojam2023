@@ -12,6 +12,5 @@ export const onConnect = (socket: Socket) => {
   socket.on(constants.MSG_TYPES.CREATE_ROOM, createRoom(socket));
   socket.on(constants.MSG_TYPES.JOIN_ROOM, joinRoom(socket));
   socket.on(constants.MSG_TYPES.LEAVE_ROOM, leaveRoom(socket));
-  socket.on(constants.MSG_TYPES.SEND_MSG_TO_ROOM, sendMsgToRoom(socket));
   socket.on(constants.MSG_TYPES.DISCONNECT, leaveRoom(socket));
 }
