@@ -1,9 +1,6 @@
 import { Server, Socket } from "socket.io";
-
-interface Room {
-  id: string;
-  users: Socket[];
-}
+import Room from "./types/Room";
+import RoomState from "./RoomState";
 
 export class RoomManager {
   private static instance: RoomManager;
@@ -11,6 +8,7 @@ export class RoomManager {
 
   private rooms: Room[] = [];
 
+  // Needs to be called first, when server starts up.
   public static setIo(io: Server): void {
     RoomManager.io = io;
   }
@@ -25,7 +23,7 @@ export class RoomManager {
   }
 
   createRoom(roomId: string, socket: Socket) {
-    this.rooms.push({ id: roomId, users: [socket] });
+    this.rooms.push({ id: roomId, users: [socket], state: new RoomState() });
     socket.join(roomId);
   }
 
@@ -63,5 +61,9 @@ export class RoomManager {
     });
     // Removing empty rooms
     this.rooms = this.rooms.filter(room => room.users.length > 0);
+  }
+
+  getRooms() {
+    return this.rooms;
   }
 }
