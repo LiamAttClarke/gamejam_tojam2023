@@ -1,10 +1,9 @@
 import { Socket } from 'socket.io';
 import constants from '../../../shared/constants';
-import { RoomManager } from '../RoomManager';
-import createRoom from './createRoom';
-import joinRoom from './joinRoom';
-import leaveRoom from './leaveRoom';
-import sendMsgToRoom from './sendMsgToRoom';
+import createRoom from './rooms/createRoom';
+import joinRoom from './rooms/joinRoom';
+import leaveRoom from './rooms/leaveRoom';
+import sendMsgToRoom from './rooms/sendMsgToRoom';
 
 
 export const onConnect = (socket: Socket) => {
