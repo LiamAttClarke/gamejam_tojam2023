@@ -6,6 +6,7 @@ export default Object.freeze({
     LEAVE_ROOM: 'leave_room',
     SEND_MSG_TO_ROOM: 'send_msg_to_room',
     DISCONNECT: 'disconnect',
+    BROADCAST_ROOM_STATE: 'broadcast_room_state'
   },
   MOVE_DIRECTIONS: {
     UP: 'up',
