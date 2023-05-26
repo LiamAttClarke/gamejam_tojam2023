@@ -3,6 +3,6 @@ import RoomState from "../RoomState";
 
 export default interface Room {
   id: string;
-  users: Socket[];
+  sockets: Socket[];
   state: RoomState;
 }
