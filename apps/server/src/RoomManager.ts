@@ -68,4 +68,14 @@ export class RoomManager {
   getRooms() {
     return this.rooms;
   }
+
+  getRoomForSocket(socket: Socket) {
+    for(const room of this.rooms) {
+      for(const user of room.users) {
+        if(user.id === socket.id) return room;
+      }
+    }
+
+    return null;
+  }
 }
