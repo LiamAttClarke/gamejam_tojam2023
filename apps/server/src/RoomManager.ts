@@ -1,6 +1,7 @@
 import { Server, Socket } from "socket.io";
 import Room from "./types/Room";
 import RoomState from "./RoomState";
+import constants from "../../shared/constants";
 
 export class RoomManager {
   private static instance: RoomManager;
@@ -46,10 +47,10 @@ export class RoomManager {
     }
   }
 
-  sendMessage(roomId: string, message: string) {
+  broadcastRoomState(roomId: string, message: string) {
     const room = this.rooms.find(room => room.id === roomId);
     if (room) {
-      RoomManager.io.to(roomId).emit('receive message', message);
+      RoomManager.io.to(roomId).emit(constants.MSG_TYPES.BROADCAST_ROOM_STATE, message);
     }
   }
 
