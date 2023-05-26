@@ -1,5 +1,5 @@
 import { useGameStore } from "@/stores/game";
-import type { Curve } from "@/types";
+import type { Curve } from "shared/types/Curve";
 import Phaser from "phaser";
 
 export class Scene1 extends Phaser.Scene {

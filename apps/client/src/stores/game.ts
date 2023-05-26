@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-import type { Curve, Player } from '@/types'
+import type { Curve } from 'shared/types/Curve';
+import type { Player } from 'shared/types/Player';
 
 // NOTE: Game store should only be mutated by a server event
 
