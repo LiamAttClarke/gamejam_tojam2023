@@ -19,7 +19,9 @@ gameStore.addCurve({
 <template>
   <main>
     <div>
+      <router-link to="/">Welcome</router-link>
       <router-link to="/lobby">Lobby</router-link>
+      <router-link to="/character">Character Select</router-link>
       <router-link to="/game">Game</router-link>
       <router-view></router-view>
     </div>
