@@ -30,6 +30,10 @@ export class RoomManager {
 
   // TODO: add constraint to make sure a player can't join more than one room.
   joinRoom(roomId: string, socket: Socket) {
+    this.rooms.forEach((curr_room: Room) => {
+      const this_user: Socket | undefined = curr_room.users.find((s: Socket) => s === socket);
+      this_user?.leave(curr_room.id);
+    });
     const room = this.rooms.find(room => room.id === roomId);
     if (room) {
       room.users.push(socket);
