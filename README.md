@@ -1,6 +1,6 @@
 # TOJam2023
 
-## Setup
+## Setup Client
 
 Follow these steps to get things up and running.
 
@@ -35,3 +35,11 @@ Follow these steps to get things up and running.
     Finally, follow the URL printed in your terminal. Changes made will automatically update served website as long as this dev command is runing.
 
 1. Setup `apps/server` package
+
+## Setup Server
+
+1. Install dependencies
+
+    - [Deno](https://deno.com/manual@v1.34.0/getting_started/installation)
+
+        An alternative Javascript runtime to NodeJS. If on Mac: `brew install deno`.
