@@ -35,3 +35,11 @@ Follow these steps to get things up and running.
     Finally, follow the URL printed in your terminal. Changes made will automatically update served website as long as this dev command is runing.
 
 1. Setup `apps/server` package
+    ```bash
+    cd ./apps/server
+    npm install
+    ```
+
+    ```bash
+    npm run dev
+    ```
