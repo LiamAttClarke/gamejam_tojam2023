@@ -1,3 +1,5 @@
+import Curve from '../../../shared/dtos/Curve';
+
 export const onUpdateClients = () => {
-  console.log('updating clients');
+  console.log(JSON.stringify(new Curve(2)));
 }
