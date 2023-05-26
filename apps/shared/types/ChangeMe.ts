@@ -1,3 +1,3 @@
-export interface ChangeMe {
+export default interface ChangeMe {
   b: number;
 }
