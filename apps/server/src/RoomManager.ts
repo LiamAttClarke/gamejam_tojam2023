@@ -24,7 +24,7 @@ export class RoomManager {
   }
 
   createRoom(roomId: string, socket: Socket) {
-    this.rooms.push({ id: roomId, users: [socket], state: new RoomState() });
+    this.rooms.push({ id: roomId, sockets: [socket], state: new RoomState() });
     socket.join(roomId);
   }
 
@@ -32,7 +32,7 @@ export class RoomManager {
   joinRoom(roomId: string, socket: Socket) {
     const room = this.rooms.find(room => room.id === roomId);
     if (room) {
-      room.users.push(socket);
+      room.sockets.push(socket);
       socket.join(roomId);
     }
   }
@@ -40,9 +40,9 @@ export class RoomManager {
   leaveRoom(roomId: string, socket: Socket) {
     const room = this.rooms.find(room => room.id === roomId);
     if (room) {
-      room.users = room.users.filter(user => user.id !== socket.id);
+      room.sockets = room.sockets.filter(user => user.id !== socket.id);
       socket.leave(roomId);
-      if (room.users.length === 0) {
+      if (room.sockets.length === 0) {
         this.rooms = this.rooms.filter(r => r.id !== roomId);
       }
     }
@@ -58,11 +58,11 @@ export class RoomManager {
   handleDisconnect(socket: Socket) {
     // Removing socket from all rooms
     this.rooms = this.rooms.map(room => {
-      room.users = room.users.filter(user => user.id !== socket.id);
+      room.sockets = room.sockets.filter(user => user.id !== socket.id);
       return room;
     });
     // Removing empty rooms
-    this.rooms = this.rooms.filter(room => room.users.length > 0);
+    this.rooms = this.rooms.filter(room => room.sockets.length > 0);
   }
 
   getRooms() {
@@ -71,7 +71,7 @@ export class RoomManager {
 
   getRoomForSocket(socket: Socket) {
     for(const room of this.rooms) {
-      for(const user of room.users) {
+      for(const user of room.sockets) {
         if(user.id === socket.id) return room;
       }
     }
