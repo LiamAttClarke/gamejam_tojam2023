@@ -3,8 +3,6 @@ import constants from '../../../shared/constants';
 import createRoom from './rooms/createRoom';
 import joinRoom from './rooms/joinRoom';
 import leaveRoom from './rooms/leaveRoom';
-import sendMsgToRoom from './rooms/sendMsgToRoom';
-
 
 export const onConnect = (socket: Socket) => {
   console.log('received new connection from FE', socket.id);
