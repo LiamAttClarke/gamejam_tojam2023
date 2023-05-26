@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Game from './components/GameRenderer.vue';
-import Lobby from './components/HelloWorld.vue';
-import Welcome from './components/TheWelcome.vue';
+import Lobby from './components/GameLobby.vue';
+
 
 const routes: Array<RouteRecordRaw> = [
-  { path: '/', component: Welcome },
   { path: '/lobby', component: Lobby },
   { path: '/game', component: Game },
 ];
