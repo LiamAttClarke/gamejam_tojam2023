@@ -26,7 +26,10 @@ const port = process.env.PORT || 3000;
 const server = createServer(app).listen(port);
 console.log(`Server listening on port ${port}`);
 
-const io = new Server(server);
+const io = new Server(server, { cors: {
+  origin: whitelist,
+  methods: ["GET", "POST"],
+}});
 RoomManager.setIo(io);
 
 io.on('connection', onConnect);
