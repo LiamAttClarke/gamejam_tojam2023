@@ -60,3 +60,6 @@ Follow these steps to get things up and running.
     ```bash
     npm run dev
     ```
+## Attributions
+
+Background taken from  [Background Vectors by Vecteezy](https://www.vecteezy.com/free-vector/background).
