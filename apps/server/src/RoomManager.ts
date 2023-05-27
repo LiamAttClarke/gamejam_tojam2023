@@ -32,7 +32,9 @@ export class RoomManager {
     return RoomManager.instance;
   }
 
-  createRoom(roomId: string, socket: Socket) {
+  createRoom(socket: Socket) {
+    const roomId = crypto.randomUUID();
+
     const room = new Room(roomId);
     room.addPlayer(socket);
 
