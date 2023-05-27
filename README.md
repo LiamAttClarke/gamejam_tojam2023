@@ -43,3 +43,11 @@ Follow these steps to get things up and running.
     - [Deno](https://deno.com/manual@v1.34.0/getting_started/installation)
 
         An alternative Javascript runtime to NodeJS. If on Mac: `brew install deno`.
+    ```bash
+    cd ./apps/server
+    npm install
+    ```
+
+    ```bash
+    npm run dev
+    ```
