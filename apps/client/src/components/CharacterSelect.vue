@@ -9,13 +9,13 @@ import RoundButton from './RoundButton.vue';
   <div class="container">
     <h1>Select your pooper!</h1>
     <div class="button-container">
-    <RoundButton>
+    <RoundButton class="btn">
       <img src="../assets/fox-pixel.png" alt="test" width="100" height="100">
     </RoundButton>
-    <RoundButton>
+    <RoundButton class="btn">
       <img src="../assets/cat-pixel.png" alt="test" width="100" height="100">
     </RoundButton>
-    <RoundButton>
+    <RoundButton class="btn">
       <img src="../assets/dog-pixel.png" alt="test" width="100" height="100">
     </RoundButton>
   </div>
@@ -38,6 +38,10 @@ h1 {
 .button-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+.btn {
+  margin: 20px;
 }
 </style>
