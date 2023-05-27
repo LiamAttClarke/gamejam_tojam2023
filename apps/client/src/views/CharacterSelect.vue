@@ -1,8 +1,22 @@
 <script setup lang="ts">
 import CharacterTile from '../components/CharacterTile.vue';
+/*
+import RoundButton from './RoundButton.vue';
+import {GameManager} from '../GameManager';
+const gameManager = GameManager.getInstance();
 // see other players and their selections
 // see available clickable characters
 // if host, start game button
+function addPlayer(){
+
+  const player: Player = {
+  id: crypto.randomUUID(),
+  name: "Liam",
+  position: [Math.random()*200, Math.random()*200]
+};
+  gameManager.addPlayer(player);
+}
+*/
 </script>
 
 <template>
@@ -19,6 +33,7 @@ import CharacterTile from '../components/CharacterTile.vue';
       <img src="../assets/dog-pixel.png" alt="test" width="100" height="100">
     </CharacterTile>
   </div>
+  <button @click="addPlayer">Add Player</button>
   </div>
 </template>
 
