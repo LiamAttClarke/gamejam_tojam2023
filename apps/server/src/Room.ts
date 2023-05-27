@@ -70,7 +70,7 @@ export class Room {
       guesserId: options.guesserId || "",
       startTimeMS: now,
       lastUpdateMS: now,
-      term: match.term,
+      term: match.term.trim(),
       clue: match.clue,
       guesses: [],
       players: [],
@@ -97,8 +97,10 @@ export class Room {
     const player = this.getPlayer(playerId);
     if (!player) throw new Error(`Player '${playerId}' not found.`);
     if (this._game.guesserId !== playerId) throw new Error(`Player '${playerId}' is not the guesser.`);
-    // TODO make sure the guess is not an empty string
-    this._game?.guesses.push(guess.trim());
+
+    const normalizedGuess = guess.trim();
+    if (!normalizedGuess) throw new Error("Empty guesses are not allowed.")
+    this._game?.guesses.push(normalizedGuess);
   }
 
   setPlayerAcceleration(playerId: string, acceleration: Vector) {
@@ -146,7 +148,7 @@ export class Room {
       this._game.status = GameStatus.Failure;
     }
     // Check win condition
-    const correctGuess = this._game.guesses.find(g => g.toLowerCase() === this._game!.term);
+    const correctGuess = this._game.guesses.find(g => g.toLowerCase() === this._game!.term.toLowerCase());
     if (correctGuess) {
       this._game.status = GameStatus.Victory;
     }
