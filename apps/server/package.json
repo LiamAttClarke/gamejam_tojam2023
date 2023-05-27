@@ -10,7 +10,8 @@
   "dependencies": {
     "express": "^4.18.2",
     "socket.io": "^4.6.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "shared": "../shared"
   },
   "devDependencies": {
     "@types/socket.io": "^3.0.2",

@@ -1,7 +1,6 @@
 import { Server, Socket } from "socket.io";
-import Room from "./types/Room";
-import RoomState from "./Room";
-import constants from "../../shared/constants";
+import { Room } from "./Room";
+import constants from "shared/constants";
 
 // FOR: ALEX
 

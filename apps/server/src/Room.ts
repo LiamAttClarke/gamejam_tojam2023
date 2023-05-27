@@ -1,4 +1,5 @@
 import { Socket } from "socket.io";
+import { Game } from "shared/types/Game";
 
 // FOR: LIAM
 
@@ -14,11 +15,7 @@ import { Socket } from "socket.io";
  * - Must compute next position for a given player
  */
 export class Room {
-  // players: Map<Socket, Point>;
+  private sockets: Socket[] = [];
 
-  // constructor() {
-  //   this.players = new Map();
-  // }
-
-
+  private game: Game;
 }
