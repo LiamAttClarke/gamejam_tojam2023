@@ -22,13 +22,12 @@ import crypto from 'crypto';
  * [x] update trail
  */
 export class Room {
-  private _id: string;
   private _sockets: Socket[] = [];
-  private _game: Game|null = null;
+  private _game: Game;
   private _destroyed = false;
 
   get id (): string {
-    return this._id;
+    return this._game.id;
   }
 
   get destroyed(): boolean {
@@ -43,8 +42,23 @@ export class Room {
     return this._game;
   }
 
-  constructor(roomId: string) {
-    this._id = roomId;
+  constructor(roomId: string, options: {
+    durationMS: number;
+    guesserId?: string;
+  }) {
+    this._game = {
+      id: roomId,
+      status: GameStatus.Inactive,
+      durationMS: options.durationMS,
+      guesserId: options.guesserId || "",
+      startTimeMS: 0,
+      lastUpdateMS: 0,
+      term: '',
+      clue: '',
+      guesses: [],
+      players: [],
+      trails: []
+    };
   }
 
   private getNextMatch(): { term: string, clue: string } {
@@ -60,23 +74,14 @@ export class Room {
     durationMS: number;
     guesserId?: string;
   }) {
-    if (this._game) this.endGame();
     if (this._sockets.length < 2) throw new Error("Room must have at least 2 players to start.");
     const match = this.getNextMatch();
     const now = new Date().getTime();
-    this._game = {
-      id: crypto.randomUUID(),
-      status: GameStatus.Active,
-      durationMS: options.durationMS,
-      guesserId: options.guesserId || "",
-      startTimeMS: now,
-      lastUpdateMS: now,
-      term: match.term.trim(),
-      clue: match.clue,
-      guesses: [],
-      players: [],
-      trails: []
-    };
+    this._game.startTimeMS = now;
+    this._game.lastUpdateMS = now;
+    this._game.term = match.term;
+    this._game.clue = match.clue;
+
     // Create players for each socket
     this._sockets.forEach(s => this.addPlayer(s));
     if (!this._game.guesserId) {
@@ -90,7 +95,7 @@ export class Room {
   }
 
   endGame() {
-    this._game = null;
+    this._game.status = GameStatus.Inactive;
   }
 
   submitGuess(playerId: string, guess: string) {

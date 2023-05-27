@@ -4,7 +4,8 @@ import { Trail } from "./Trail";
 export enum GameStatus {
   Active = 'active',
   Victory = 'victory',
-  Failure = 'failure'
+  Failure = 'failure',
+  Inactive = 'inactive',
 }
 
 export interface Game {

@@ -3,6 +3,7 @@ import { Room } from "./Room";
 import constants from "../../shared/constants";
 
 import crypto from 'crypto';
+
 // FOR: ALEX
 
 /** Manages the lifecycle/CRUD of rooms
@@ -36,7 +37,7 @@ export class RoomManager {
   createRoom(socket: Socket) {
     const roomId = crypto.randomUUID();
 
-    const room = new Room(roomId);
+    const room = new Room(roomId, { durationMS: 1000 * 60 * 10 });
     room.addPlayer(socket);
 
     this.rooms.push(room);
