@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Welcome from './components/Welcome.vue';
 import CharacterSelect from './views/CharacterSelect.vue';
 import Game from './components/GameRenderer.vue';
-import Lobby from './components/GameLobby.vue';
+import Lobby from './views/GameLobby.vue';
 import GameRoom from './components/GameRoom.vue';
 
 
