@@ -1,6 +1,6 @@
 import { IVector } from "./types/IVector";
 
-export default class Vector2 implements IVector {
+export default class Vector implements IVector {
   x: number;
 
   y: number;
@@ -10,20 +10,24 @@ export default class Vector2 implements IVector {
     this.y = y || 0;
   }
 
-  static fromArray(arr: number[]): Vector2 {
+  static fromArray(arr: number[]): Vector {
     if (arr.length !== 2) throw new Error("'arr' length must be 2.");
-    return new Vector2(arr[0], arr[1]);
+    return new Vector(arr[0], arr[1]);
   }
 
-  static dot(u: Vector2, v: Vector2): number {
+  static fromVectorLike(v: IVector): Vector {
+    return new Vector(v.x, v.y);
+  }
+
+  static dot(u: Vector, v: Vector): number {
     return u.x * v.x + u.y * v.y;
   }
 
-  static distance(v: Vector2, u: Vector2): number {
+  static distance(v: Vector, u: Vector): number {
     return u.subtract(v).magnitude();
   }
 
-  static angleBetween(a: Vector2, b: Vector2): number {
+  static angleBetween(a: Vector, b: Vector): number {
     const p = a.x * b.x + a.y * b.y;
     const n = Math.sqrt(
       (a.x ** 2 + a.y ** 2) * (b.x ** 2 + b.y ** 2),
@@ -33,41 +37,41 @@ export default class Vector2 implements IVector {
     return sign * angle;
   }
 
-  add(v: Vector2): Vector2 {
-    return new Vector2(this.x + v.x, this.y + v.y);
+  add(v: Vector): Vector {
+    return new Vector(this.x + v.x, this.y + v.y);
   }
 
-  subtract(v: Vector2): Vector2 {
-    return new Vector2(this.x - v.x, this.y - v.y);
+  subtract(v: Vector): Vector {
+    return new Vector(this.x - v.x, this.y - v.y);
   }
 
-  addScalar(n: number): Vector2 {
-    return new Vector2(this.x + n, this.y + n);
+  addScalar(n: number): Vector {
+    return new Vector(this.x + n, this.y + n);
   }
 
-  subtractScalar(n: number): Vector2 {
-    return new Vector2(this.x - n, this.y - n);
+  subtractScalar(n: number): Vector {
+    return new Vector(this.x - n, this.y - n);
   }
 
-  multiplyByScalar(n: number): Vector2 {
-    return new Vector2(this.x * n, this.y * n);
+  multiplyByScalar(n: number): Vector {
+    return new Vector(this.x * n, this.y * n);
   }
 
-  negate(): Vector2 {
-    return new Vector2(-this.x, -this.y);
+  negate(): Vector {
+    return new Vector(-this.x, -this.y);
   }
 
   magnitude(): number {
     return Math.sqrt(this.x * this.x + this.y * this.y);
   }
 
-  normalize(): Vector2 {
+  normalize(): Vector {
     const magnitude = this.magnitude();
-    return new Vector2(this.x / magnitude, this.y / magnitude);
+    return new Vector(this.x / magnitude, this.y / magnitude);
   }
 
-  perpendicular(clockwise = true): Vector2 {
-    return clockwise ? new Vector2(this.y, -this.x) : new Vector2(-this.y, this.x);
+  perpendicular(clockwise = true): Vector {
+    return clockwise ? new Vector(this.y, -this.x) : new Vector(-this.y, this.x);
   }
 
   toArray(): number[] {
