@@ -1,5 +1,6 @@
 import type { Trail } from 'shared/types/Trail';
 import type { Player } from 'shared/types/Player';
+import { Character } from './constants'
 
 // NOTE: Game store should only be mutated by a server event
 
