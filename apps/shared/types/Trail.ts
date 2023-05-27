@@ -1,5 +1,7 @@
+import { Vector } from "./Vector";
+
 export interface Trail {
   id: string;
   ownerId: string;
-  points: number[][];
+  points: Vector[];
 }

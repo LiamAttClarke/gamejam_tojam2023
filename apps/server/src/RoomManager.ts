@@ -1,8 +1,18 @@
 import { Server, Socket } from "socket.io";
 import Room from "./types/Room";
-import RoomState from "./RoomState";
+import RoomState from "./Room";
 import constants from "../../shared/constants";
 
+// FOR: ALEX
+
+/** Manages the lifecycle/CRUD of rooms
+ *
+ * Requirements:
+ * Create, Join, Leave, Delete rooms
+ * on create room, generate roomId and return to client
+ */
+
+/**  */
 export class RoomManager {
   private static instance: RoomManager;
   private static io: Server;

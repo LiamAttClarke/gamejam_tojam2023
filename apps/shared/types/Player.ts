@@ -1,5 +1,8 @@
+import { PhysicsBody } from "./PhysicsBody";
+
 export interface Player {
   id: string;
   name: string;
-  position: number[];
+  body: PhysicsBody;
+  currentTrailId: string;
 }

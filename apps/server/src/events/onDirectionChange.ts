@@ -1,8 +1,8 @@
 import { Socket } from "socket.io"
 import { RoomManager } from "../RoomManager";
-import Point from "../../../shared/types/Point";
+import { Vector } from "../../../shared/types/Vector";
 
-export default (socket: Socket) => (direction: Point) => {
+export default (socket: Socket) => (direction: Vector) => {
   console.log(`${socket.id} wants to move ${direction}`);
 
   const roomManager = RoomManager.getInstance();
