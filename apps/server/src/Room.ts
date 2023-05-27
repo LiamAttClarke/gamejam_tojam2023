@@ -5,6 +5,7 @@ import matches from "./matches.json";
 import { IVector } from "../../shared/types/IVector";
 import { Game, GameStatus } from "../../shared/types/Game";
 import { updatePhysicsBody } from "./physics";
+import { Trail } from "shared/types/Trail";
 
 // FOR: LIAM
 
@@ -17,8 +18,7 @@ import { updatePhysicsBody } from "./physics";
  * [x] get snapshot of game state
  * [x] evaluate win/lose conditions
  * [x] Must compute next position for a given player
- * [] evaluate guess immediately not on update call
- * [] update trail
+ * [x] update trail
  */
 export class Room {
   private _id: string;
@@ -107,6 +107,33 @@ export class Room {
     player.body.acceleration = acceleration;
   }
 
+  addTrailPoint(playerId: string, position: Vector) {
+    const player = this.getPlayer(playerId);
+    if (!player) throw new Error(`Player '${playerId}' not found.`);
+    let trail: Trail;
+    if (player.currentTrailId) {
+      // Use current trail
+      const currentTrail = this.getTrail(player.currentTrailId);
+      if (!currentTrail) throw new Error(`Could not find current trail for player '${playerId}'.`);
+      trail = currentTrail;
+    } else {
+      // create new trail
+      trail = {
+        id: crypto.randomUUID(),
+        playerId,
+        points: [],
+      };
+      player.currentTrailId = trail.id
+    }
+    trail.points.push(position);
+  }
+
+  endTrail(playerId: string) {
+    const player = this.getPlayer(playerId);
+    if (!player) throw new Error(`Player '${playerId}' not found.`);
+    player.currentTrailId = null;
+  }
+
   update() {
     if (!this._game) throw new Error("A game is not in progress.");
     const now = new Date().getTime();
@@ -129,6 +156,10 @@ export class Room {
 
   getPlayer(playerId: string): Player|null {
     return this._game?.players.find(p => p.id === playerId) || null;
+  }
+
+  getTrail(trailId: string): Trail|null {
+    return this._game?.trails.find(t => t.id === trailId) || null;
   }
 
   addPlayer(socket: Socket, options?: {
