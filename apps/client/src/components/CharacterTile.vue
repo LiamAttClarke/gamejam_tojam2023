@@ -28,15 +28,15 @@ const props = defineProps({
       name="char"
     />
     <div class="tile">
-      <img :src="`/src/assets/${character}.png`" alt="character" width="100" height="100" />
+      <img :src="`/assets/${character}.png`" alt="character" width="100" height="100" />
     </div>
   </label>
 </template>
 
 <style scoped>
 .tile {
-  padding: 10px 20px;
-  border-radius: 50px;
+  padding: 10px;
+  border-radius: 16px;
   cursor: pointer;
   border: 1px solid black;
 }
@@ -50,6 +50,6 @@ label input {
 }
 
 .wrapper input:checked ~ .tile {
-  border: 5px solid red;
+  border: 5px solid brown;
 }
 </style>
