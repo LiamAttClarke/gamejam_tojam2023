@@ -76,8 +76,8 @@ export class RoomManager {
   }
 
   getRoomForSocket(socket: Socket) {
-    for(const room of this.rooms) {
-      if(room.hasSocket(socket)) return room;
+    for (const room of this.rooms) {
+      if (room.hasSocket(socket)) return room;
     }
 
     return null;

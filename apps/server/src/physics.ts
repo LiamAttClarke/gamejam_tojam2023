@@ -6,8 +6,7 @@ export interface IUpdatePhysicsBody {
 }
 
 // Any problems? Talk to Ivan
-export const computeNextPosition: IUpdatePhysicsBody = (deltaT: number, body: PhysicsBody) => {
-
+export const updatePhysicsBody: IUpdatePhysicsBody = (deltaT: number, body: PhysicsBody) => {
   let time_factor: number = (deltaT / body.lastDeltaT);
   let delta_x: number = (body.position.x - body.lastPosition.x + body.acceleration.x) * time_factor;
   let delta_y: number = (body.position.y - body.lastPosition.y + body.acceleration.y) * time_factor;
