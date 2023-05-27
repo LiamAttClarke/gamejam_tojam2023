@@ -1,5 +1,14 @@
 # TOJam2023
 
+## Run both server and client in development
+In the root directory
+
+```
+npm install
+npm run install
+npm run dev
+```
+
 ## Setup Client
 
 Follow these steps to get things up and running.
