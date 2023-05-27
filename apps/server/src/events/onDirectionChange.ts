@@ -1,8 +1,8 @@
 import { Socket } from "socket.io"
 import { RoomManager } from "../RoomManager";
-import { Vector } from "../../../shared/types/Vector";
+import { IVector } from "shared/types/IVector";
 
-export default (socket: Socket) => (direction: Vector) => {
+export default (socket: Socket) => (direction: IVector) => {
   console.log(`${socket.id} wants to move ${direction}`);
 
   const roomManager = RoomManager.getInstance();

@@ -1,9 +1,9 @@
-import { Vector } from './Vector'
+import { IVector } from './IVector'
 
 export interface PhysicsBody {
-  position: Vector;
-  lastPosition: Vector;
-  acceleration: Vector;
+  position: IVector;
+  lastPosition: IVector;
+  acceleration: IVector;
   mass: number;
   drag: number;
 };

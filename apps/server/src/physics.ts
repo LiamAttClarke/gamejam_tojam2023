@@ -1,8 +1,8 @@
 import { PhysicsBody } from "../../shared/types/PhysicsBody"
-import { Vector } from "../../shared/types/Vector";
+import { IVector } from "../../shared/types/IVector";
 
 export interface IComputeNextPhysicsBodyPosition {
-  (deltaT: number, body: PhysicsBody): Vector;
+  (deltaT: number, body: PhysicsBody): IVector;
 }
 
 // FOR: IVAN
