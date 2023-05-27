@@ -1,6 +1,6 @@
 import { Socket } from "socket.io"
 import { RoomManager } from "../RoomManager";
-import { IVector } from "shared/types/IVector";
+import { IVector } from "../../../shared/types/IVector";
 
 export default (socket: Socket) => (direction: IVector) => {
   console.log(`${socket.id} wants to move ${direction}`);
@@ -14,5 +14,6 @@ export default (socket: Socket) => (direction: IVector) => {
     return;
   }
 
-  room.state.players.set(socket, direction);
+  // TODO: find player in room, set their new direction
+  // room.game.players.set(socket, direction);
 }

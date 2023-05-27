@@ -1,9 +1,9 @@
 import { Socket } from "socket.io";
-import { Game } from "shared/types/Game";
 import { Player } from "../../shared/types/Player";
 import Vector from "../../shared/Vector";
-import { IVector } from "shared/types/IVector";
 import matches from "./matches.json";
+import { IVector } from "../../shared/types/IVector";
+import { Game } from "../../shared/types/Game";
 
 // FOR: LIAM
 
@@ -61,9 +61,11 @@ export class Room {
       term: match.term,
       clue: match.clue,
       lastGuess: "",
-      players: this._sockets.map(()),
+      players: [],
       trails: []
     };
+
+    this._sockets.forEach(s => this.addPlayer(s));
   }
 
   endGame() {
@@ -89,6 +91,7 @@ export class Room {
       id: playerId,
       name: "Anonymous",
       body: {
+        lastDeltaT: new Date().getTime(),
         position: new Vector(0, 0),
         lastPosition: new Vector(0, 0),
         acceleration: new Vector(0, 0),
@@ -123,6 +126,14 @@ export class Room {
     }
   }
 
+  getNumPlayers() {
+    return this._sockets.length;
+  }
+
+  hasSocket(socket: Socket) {
+    return this._sockets.filter(s => s.id === socket.id).length > 0;
+  }
+
   destroy() {
     this.endGame();
     for (const socket of this._sockets) {
@@ -130,5 +141,4 @@ export class Room {
     }
     this._destroyed = true;
   }
-
 }
