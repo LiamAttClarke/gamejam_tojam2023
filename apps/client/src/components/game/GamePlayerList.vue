@@ -1,14 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-const players = ref(['Player 1', 'Player 2', 'Player 3']);
-
+import { GameManager } from '../../GameManager';
+const gameManager = GameManager.getInstance();
 </script>
 
 <template>
   <div>
     <h2>Players</h2>
     <ul>
-      <li v-for="(player, index) in players" :key="index">{{ player }}</li>
+      <li v-for="(player, index) in gameManager.players" :key="index">{{ player }}</li>
+    </ul>
+    <h2>Players</h2>
+    <ul>
+      <li v-for="(player, index) in gameManager.trails" :key="index">{{ player }}</li>
     </ul>
   </div>
 </template>
