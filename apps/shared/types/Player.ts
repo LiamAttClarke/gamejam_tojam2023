@@ -4,5 +4,5 @@ export interface Player {
   id: string;
   name: string;
   body: PhysicsBody;
-  currentTrailId: string;
+  currentTrailId: string|null;
 }
