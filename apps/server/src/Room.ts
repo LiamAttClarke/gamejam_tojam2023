@@ -6,6 +6,7 @@ import { IVector } from "../../shared/types/IVector";
 import { Game, GameStatus } from "../../shared/types/Game";
 import { updatePhysicsBody } from "./physics";
 import { Trail } from "../../shared/types/Trail";
+import crypto from 'crypto';
 
 // FOR: LIAM
 

@@ -2,6 +2,7 @@ import { Server, Socket } from "socket.io";
 import { Room } from "./Room";
 import constants from "../../shared/constants";
 
+import crypto from 'crypto';
 // FOR: ALEX
 
 /** Manages the lifecycle/CRUD of rooms
