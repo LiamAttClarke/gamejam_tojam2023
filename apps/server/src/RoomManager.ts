@@ -35,7 +35,7 @@ export class RoomManager {
   }
 
   createRoom(socket: Socket) {
-    const roomId = crypto.randomUUID();
+    const roomId = crypto.randomUUID().substring(0, 5);
 
     const room = new Room(roomId, { durationMS: 1000 * 60 * 10 });
     room.addPlayer(socket);
