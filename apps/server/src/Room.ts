@@ -119,8 +119,8 @@ export class Room {
       this._game.status = GameStatus.Failure;
     }
     // Check win condition
-    const lastGuess = this._game.guesses.at(-1);
-    if (lastGuess && lastGuess.toLowerCase() === this._game.term) {
+    const correctGuess = this._game.guesses.find(g => g.toLowerCase() === this._game!.term);
+    if (correctGuess) {
       this._game.status = GameStatus.Victory;
     }
     // Update game time
