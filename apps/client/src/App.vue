@@ -65,7 +65,7 @@ setInterval(() => {
     gameManager.appendTrailPoint(currentTrailId.value, player.position);
   }else{//not pooping
     currentTrailId.value = null;
-    console.log(gameManager.trails);
+    //console.log(gameManager.trails);
   }
 }, 1000);
 </script>
