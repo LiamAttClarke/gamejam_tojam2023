@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import RoundButton from './RoundButton.vue';
+import CharacterTile from '../components/CharacterTile.vue';
 // see other players and their selections
 // see available clickable characters
 // if host, start game button
@@ -9,15 +9,15 @@ import RoundButton from './RoundButton.vue';
   <div class="container">
     <h1>Select your pooper!</h1>
     <div class="button-container">
-    <RoundButton class="btn">
+    <CharacterTile class="btn">
       <img src="../assets/fox-pixel.png" alt="test" width="100" height="100">
-    </RoundButton>
-    <RoundButton class="btn">
+    </CharacterTile>
+    <CharacterTile class="btn">
       <img src="../assets/cat-pixel.png" alt="test" width="100" height="100">
-    </RoundButton>
-    <RoundButton class="btn">
+    </CharacterTile>
+    <CharacterTile class="btn">
       <img src="../assets/dog-pixel.png" alt="test" width="100" height="100">
-    </RoundButton>
+    </CharacterTile>
   </div>
   </div>
 </template>
