@@ -34,7 +34,12 @@ export class Scene1 extends Phaser.Scene {
       this.updatePlayer(player);
     }
     for (const trail of this._gameManager.trails) {
-      this.updateTrail(trail);
+      try {
+        this.updateTrail(trail);
+        this.drawSplineFromTrail(trail)
+      } catch (e) {
+        this.addTrail(trail);
+      }
     }
   }
 
@@ -64,5 +69,27 @@ export class Scene1 extends Phaser.Scene {
     const trailObj = this._trailObjs.get(trail.id);
     if (!trailObj) throw new Error(`No GameObject found for trail: ${trail.id}`);
     // TODO: update curve
+  }
+
+  private drawSplineFromTrail(trail: Trail) {
+    const flattenedPoints = trail.points.reduce((points, p) => [...points, ...p], []);
+
+    const graphics = this.add.graphics();
+    const lineWidth = 2;
+    const lineColor = 0xff0000;
+
+    graphics.lineStyle(lineWidth, lineColor);
+
+    if (flattenedPoints.length > 1) {
+      const startingPoint = new Phaser.Math.Vector2(flattenedPoints[0], flattenedPoints[1]);
+      graphics.moveTo(startingPoint.x, startingPoint.y);
+
+      for (let i = 2; i < flattenedPoints.length; i += 2) {
+        const point = new Phaser.Math.Vector2(flattenedPoints[i], flattenedPoints[i + 1]);
+        graphics.lineTo(point.x, point.y);
+      }
+    }
+
+    graphics.strokePath();
   }
 }
