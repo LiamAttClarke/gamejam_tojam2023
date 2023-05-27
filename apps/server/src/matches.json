@@ -1,770 +1,502 @@
 [
   {
     "term": "shadow",
-    "clue": "I follow you everywhere, but disappear in the light."
+    "clue": "Vanishes in light."
   },
   {
     "term": "home",
-    "clue": "A place where walls hold secrets and memories unfold."
+    "clue": "Holds secrets."
   },
   {
     "term": "road",
-    "clue": "I stretch ahead, guiding your journey to unknown destinations."
+    "clue": "Leads to the unknown."
   },
   {
     "term": "fireworks",
-    "clue": "I burst in the sky, painting vibrant colors for a fleeting moment."
+    "clue": "Colors burst in the sky."
   },
   {
     "term": "forest",
-    "clue": "A realm of whispers, where ancient trees guard hidden treasures."
-  },
-  {
-    "term": "dream",
-    "clue": "I'm a world of infinite possibilities, where reality intertwines with imagination."
+    "clue": "Whispers secrets."
   },
   {
     "term": "key",
-    "clue": "I unlock doors, revealing mysteries and granting access to the unknown."
+    "clue": "Unlocks mysteries."
   },
   {
     "term": "book",
-    "clue": "Within my pages, stories come alive, transporting you to different realms."
+    "clue": "Transports to other realms."
   },
   {
     "term": "friendship",
-    "clue": "A bond that warms the heart, woven through shared moments and laughter."
+    "clue": "Shares moments."
   },
   {
     "term": "rain",
-    "clue": "I fall from above, refreshing the earth and bringing a rhythmic melody."
+    "clue": "Falls, brings rhythm."
   },
   {
-    "term": "stardust",
-    "clue": "I shimmer in the night sky, remnants of cosmic tales and celestial dances."
+    "term": "fire",
+    "clue": "Illuminates the darkness."
+  },
+  {
+    "term": "snow",
+    "clue": "Blankets the earth."
+  },
+  {
+    "term": "moon",
+    "clue": "Lights the night."
+  },
+  {
+    "term": "sun",
+    "clue": "Radiates warmth."
+  },
+  {
+    "term": "cloud",
+    "clue": "Drifts in the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Guides the lost."
   },
   {
     "term": "ocean",
-    "clue": "I'm a vast expanse, concealing mysteries and cradling life within my depths."
-  },
-  {
-    "term": "moon",
-    "clue": "I illuminate the night, a solitary pearl in the sky's dark tapestry."
-  },
-  {
-    "term": "mountain",
-    "clue": "I rise majestically, touching the sky and witnessing the world below."
-  },
-  {
-    "term": "flower",
-    "clue": "I bloom with delicate petals, whispering nature's poetry to the wind."
-  },
-  {
-    "term": "rainbow",
-    "clue": "I paint the heavens with vibrant hues, bridging earth and sky."
+    "clue": "Conceals mysteries."
   },
   {
     "term": "beach",
-    "clue": "I'm a playground of sand and waves, where the land meets the endless sea."
+    "clue": "Meets the sea."
   },
   {
     "term": "candle",
-    "clue": "I flicker in the darkness, casting dancing shadows and spreading warmth."
-  },
-  {
-    "term": "lake",
-    "clue": "I'm a mirror for the sky, reflecting nature's beauty and tranquility."
-  },
-  {
-    "term": "whisper",
-    "clue": "I'm a soft breeze of secrets, shared in hushed tones and delicate gestures."
-  },
-  {
-    "term": "starfish",
-    "clue": "I dwell beneath the waves, a celestial creature with limbs of grace."
-  },
-  {
-    "term": "raincoat",
-    "clue": "I shield you from the downpour, a colorful armor against nature's tears."
-  },
-  {
-    "term": "cloud",
-    "clue": "I drift across the sky, a shape-shifting canvas of dreams and imagination."
+    "clue": "Flickers, warms."
   },
   {
     "term": "river",
-    "clue": "I flow through valleys, carving a path and nourishing the lands I pass."
+    "clue": "Flows through valleys."
   },
   {
-    "term": "sunflower",
-    "clue": "I'm a golden sentinel, following the sun's path with radiant petals."
+    "term": "mountain",
+    "clue": "Touches the sky."
   },
   {
-    "term": "snowflake",
-    "clue": "I dance from the heavens, a crystalline marvel of winter's delicate touch."
+    "term": "flower",
+    "clue": "Blooms beautifully."
   },
   {
-    "term": "bridge",
-    "clue": "I span divides, connecting realms and creating paths to new horizons."
-  },
-  {
-    "term": "campfire",
-    "clue": "I crackle and glow, casting flickering shadows as stories are woven."
-  },
-  {
-    "term": "butterfly",
-    "clue": "I emerge from a cocoon, adorned with vibrant wings that carry me through the air."
-  },
-  {
-    "term": "silence",
-    "clue": "I'm a void of sound, pregnant with contemplation and moments of peace."
-  },
-  {
-    "term": "mask",
-    "clue": "I conceal identities, allowing the wearer to become someone else."
-  },
-  {
-    "term": "clock",
-    "clue": "I measure the passage of time, ticking away the moments of our lives."
-  },
-  {
-    "term": "castle",
-    "clue": "I stand tall and proud, a fortress of dreams and tales of knights and royalty."
-  },
-  {
-    "term": "map",
-    "clue": "I'm a guide to the unknown, revealing paths and destinations yet to be explored."
-  },
-  {
-    "term": "music",
-    "clue": "I'm an invisible thread, weaving emotions and rhythms that resonate deep within."
-  },
-  {
-    "term": "raindrop",
-    "clue": "I fall from the sky, a teardrop of nature nourishing the earth."
-  },
-  {
-    "term": "journey",
-    "clue": "I'm an adventure into the unknown, filled with twists and turns at every step."
-  },
-  {
-    "term": "maple leaf",
-    "clue": "I'm nature's artwork, a crimson brushstroke on the canvas of autumn."
-  },
-  {
-    "term": "feather",
-    "clue": "I'm a delicate gift from birds, whispering stories of flight and freedom."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a cotton blanket in the sky, floating aimlessly on the breath of the wind."
+    "term": "sunset",
+    "clue": "Paints the sky."
   },
   {
     "term": "breeze",
-    "clue": "I'm a gentle caress, ruffling hair and carrying the scents of distant lands."
+    "clue": "Whispers softly."
   },
   {
-    "term": "footprint",
-    "clue": "I'm a trace of passage, leaving a mark on the sands of time."
+    "term": "rainbow",
+    "clue": "Colors in the sky."
   },
   {
-    "term": "harmony",
-    "clue": "I'm a symphony of souls, blending together in perfect balance and peace."
+    "term": "bird",
+    "clue": "Sings melodies."
   },
   {
-    "term": "puzzle",
-    "clue": "I'm a challenge for the mind, a jumble of pieces waiting to be solved."
+    "term": "tree",
+    "clue": "Stands tall."
   },
   {
-    "term": "laughter",
-    "clue": "I'm contagious and joyful, a melody that brightens even the darkest of days."
+    "term": "beauty",
+    "clue": "Elicits awe."
   },
   {
-    "term": "shadow",
-    "clue": "I'm a silhouette of mystery, cast by the interplay of light and darkness."
+    "term": "island",
+    "clue": "Surrounded by water."
   },
   {
-    "term": "crystal",
-    "clue": "I'm a gem of nature, reflecting light and enchanting the eyes that behold me."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a disguise of emotions, hiding the true self beneath a painted facade."
-  },
-  {
-    "term": "boat",
-    "clue": "I float on the water's surface, carrying dreams and adventures to distant shores."
-  },
-  {
-    "term": "cactus",
-    "clue": "I'm a desert survivor, thriving with resilience in arid and harsh landscapes."
-  },
-  {
-    "term": "mirror",
-    "clue": "I reflect the world before me, capturing fleeting moments and revealing truths."
-  },
-  {
-    "term": "shadows",
-    "clue": "I'm a dance of darkness, lurking where the light cannot reach."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a symbol of secrecy, concealing intentions and identities in plain sight."
-  },
-  {
-    "term": "butterfly",
-    "clue": "I'm a winged marvel, fluttering through gardens and pollinating nature's beauty."
-  },
-  {
-    "term": "path",
-    "clue": "I'm a trail of possibilities, winding through the landscape of choices and destinies."
-  },
-  {
-    "term": "candle",
-    "clue": "I flicker with warmth, illuminating the shadows and casting a soft glow."
-  },
-  {
-    "term": "echo",
-    "clue": "I'm a voice rebounding, carrying whispers of the past into the present."
-  },
-  {
-    "term": "feather",
-    "clue": "I'm a token of flight, a reminder of the freedom that exists beyond the ground."
+    "term": "starfish",
+    "clue": "Celestial creature."
   },
   {
     "term": "seashell",
-    "clue": "I'm a treasure from the ocean's depths, holding the secrets of its timeless song."
+    "clue": "Echoes the ocean."
   },
   {
-    "term": "labyrinth",
-    "clue": "I'm a maze of possibilities, where the path twists and turns, revealing hidden truths."
-  },
-  {
-    "term": "star",
-    "clue": "I'm a distant spark, a beacon of wonder in the vast expanse of the night sky."
-  },
-  {
-    "term": "hourglass",
-    "clue": "I'm a keeper of time, grains of sand slipping away, reminding of fleeting moments."
-  },
-  {
-    "term": "garden",
-    "clue": "I'm a canvas of colors, where nature's palette blooms in intricate patterns."
-  },
-  {
-    "term": "whisper",
-    "clue": "I'm a soft breath of secrets, carried on the wind, revealing tales untold."
-  },
-  {
-    "term": "puzzle",
-    "clue": "I'm a collection of pieces, waiting to be assembled to reveal a hidden picture."
-  },
-  {
-    "term": "raindrop",
-    "clue": "I'm a teardrop of the sky, falling gently and merging with others to form a symphony."
-  },
-  {
-    "term": "footprint",
-    "clue": "I'm a trace of passage, a mark left behind on the path of life."
-  },
-  {
-    "term": "candle",
-    "clue": "I'm a flickering light, casting dancing shadows and creating a cozy ambiance."
-  },
-  {
-    "term": "window",
-    "clue": "I'm a frame to the world, offering glimpses of different perspectives."
-  },
-  {
-    "term": "oasis",
-    "clue": "I'm a sanctuary in the desert, a respite of life and abundance amidst barren lands."
-  },
-  {
-    "term": "key",
-    "clue": "I'm a symbol of access, unlocking doors to new possibilities and hidden realms."
-  },
-  {
-    "term": "star",
-    "clue": "I'm a celestial jewel, twinkling in the vastness of the night sky."
-  },
-  {
-    "term": "bridge",
-    "clue": "I'm a link between worlds, spanning divides and connecting distant shores."
-  },
-  {
-    "term": "tree",
-    "clue": "I'm a towering presence, rooted in the earth and reaching for the heavens."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a disguise of emotions, concealing the true self behind a painted facade."
-  },
-  {
-    "term": "moon",
-    "clue": "I'm a silver sentinel, casting a gentle glow on the world below."
-  },
-  {
-    "term": "riddle",
-    "clue": "I'm a puzzle of words, challenging the mind and teasing with hidden meanings."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a fluffy canvas, drifting across the sky and changing shape with the wind."
-  },
-  {
-    "term": "footsteps",
-    "clue": "I'm a trail of presence, marking the path traveled and the journey yet to unfold."
-  },
-  {
-    "term": "candle",
-    "clue": "I'm a source of warmth, flickering in the darkness and casting a comforting glow."
-  },
-  {
-    "term": "reflection",
-    "clue": "I'm a mirrored image, capturing the world in a distorted yet captivating form."
-  },
-  {
-    "term": "river",
-    "clue": "I'm a flowing ribbon, carving paths through landscapes and carrying stories downstream."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a mask of disguise, concealing the true self beneath a masquerade."
-  },
-  {
-    "term": "firefly",
-    "clue": "I'm a tiny luminary, lighting up the night with my enchanting glow."
-  },
-  {
-    "term": "whisper",
-    "clue": "I'm a gentle breeze of secrets, carried on hushed voices and delicate gestures."
-  },
-  {
-    "term": "sunrise",
-    "clue": "I'm a golden spectacle, painting the sky with hues of warmth and new beginnings."
-  },
-  {
-    "term": "dream",
-    "clue": "I'm a realm of possibilities, where imagination weaves tapestries of the impossible."
+    "term": "wave",
+    "clue": "Crashes on the shore."
   },
   {
     "term": "mountain",
-    "clue": "I'm a towering presence, standing firm and witnessing the passage of time."
+    "clue": "Reaches for the sky."
   },
   {
-    "term": "maze",
-    "clue": "I'm a labyrinth of confusion, where paths twist and turn, challenging those who enter."
+    "term": "birdsong",
+    "clue": "Serenades the morning."
   },
   {
-    "term": "raindrop",
-    "clue": "I'm a gift from the clouds, falling gently to nourish the earth below."
+    "term": "castle",
+    "clue": "Stands strong."
   },
   {
-    "term": "song",
-    "clue": "I'm a melody of emotions, resonating through time and touching the heart and soul."
+    "term": "ship",
+    "clue": "Sails the seas."
   },
   {
-    "term": "secret",
-    "clue": "I'm a hidden treasure, known only to the few who hold the key to unlock me."
+    "term": "fish",
+    "clue": "Swims in water."
   },
   {
-    "term": "footprints",
-    "clue": "I'm a trace of existence, marking the path taken and the memories left behind."
+    "term": "butterfly",
+    "clue": "Flutters with grace."
   },
   {
-    "term": "cloud",
-    "clue": "I'm a floating mist, adorning the sky with my fluffy presence."
+    "term": "sunrise",
+    "clue": "Welcomes a new day."
   },
   {
-    "term": "silhouette",
-    "clue": "I'm a dark outline, capturing the essence of form and leaving room for imagination."
+    "term": "sand",
+    "clue": "Shifts with the wind."
   },
   {
-    "term": "mask",
-    "clue": "I'm a facade of emotions, hiding the true self behind a painted expression."
+    "term": "wave",
+    "clue": "Rides on the ocean."
   },
   {
-    "term": "moon",
-    "clue": "I'm a celestial companion, illuminating the night with my gentle radiance."
+    "term": "tree",
+    "clue": "Shades with branches."
   },
   {
-    "term": "journey",
-    "clue": "I'm an adventure into the unknown, filled with twists and turns along the way."
+    "term": "bird",
+    "clue": "Takes flight."
+  },
+  {
+    "term": "flower",
+    "clue": "Grows from the earth."
+  },
+  {
+    "term": "moonlight",
+    "clue": "Illuminates the night."
   },
   {
     "term": "river",
-    "clue": "I'm a flowing ribbon, carrying stories and nourishing the lands I pass."
+    "clue": "Flows through the land."
   },
   {
-    "term": "key",
-    "clue": "I'm a symbol of access, unlocking doors to new possibilities and hidden realms."
+    "term": "mountain",
+    "clue": "Stands tall and majestic."
   },
   {
-    "term": "sun",
-    "clue": "I'm a radiant ball of light, casting warmth and brightness upon the world."
+    "term": "beauty",
+    "clue": "Captivates the senses."
   },
   {
-    "term": "reflection",
-    "clue": "I'm a mirrored image, capturing the world in a different perspective."
+    "term": "beach",
+    "clue": "Sandy shoreline."
+  },
+  {
+    "term": "birdsong",
+    "clue": "Melodies in the air."
+  },
+  {
+    "term": "star",
+    "clue": "Shines brightly."
+  },
+  {
+    "term": "raindrop",
+    "clue": "Falls from the sky."
+  },
+  {
+    "term": "tree",
+    "clue": "Provides shade."
+  },
+  {
+    "term": "river",
+    "clue": "Flows with grace."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the heavens."
+  },
+  {
+    "term": "flower",
+    "clue": "Blossoms with color."
+  },
+  {
+    "term": "cloud",
+    "clue": "Floats in the atmosphere."
+  },
+  {
+    "term": "moon",
+    "clue": "Illuminates the darkness."
+  },
+  {
+    "term": "ocean",
+    "clue": "Teems with life."
+  },
+  {
+    "term": "sunrise",
+    "clue": "Signals a new day."
+  },
+  {
+    "term": "butterfly",
+    "clue": "Flits through the air."
+  },
+  {
+    "term": "bird",
+    "clue": "Swoops and soars."
+  },
+  {
+    "term": "flower",
+    "clue": "Attracts bees."
+  },
+  {
+    "term": "tree",
+    "clue": "Grows tall and strong."
+  },
+  {
+    "term": "moonlight",
+    "clue": "Cast ethereal glow."
+  },
+  {
+    "term": "river",
+    "clue": "Flows endlessly."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the sky."
+  },
+  {
+    "term": "beach",
+    "clue": "Sandy shoreline."
+  },
+  {
+    "term": "birdsong",
+    "clue": "Melodies in the air."
+  },
+  {
+    "term": "star",
+    "clue": "Shines brightly."
+  },
+  {
+    "term": "raindrop",
+    "clue": "Falls from the sky."
   },
   {
     "term": "wind",
-    "clue": "I'm a gentle whisper, carrying nature's voice and caressing the earth with unseen hands."
+    "clue": "Whispers through the trees."
   },
   {
-    "term": "footsteps",
-    "clue": "I'm a trace of presence, marking the path taken and the memories left behind."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a fluffy canvas, floating lazily across the sky, shaped by the wind's gentle touch."
-  },
-  {
-    "term": "star",
-    "clue": "I'm a distant spark, a shimmering jewel in the vastness of the night sky."
-  },
-  {
-    "term": "bridge",
-    "clue": "I'm a connection between worlds, spanning divides and creating new paths."
-  },
-  {
-    "term": "tree",
-    "clue": "I'm a pillar of life, rooted in the earth and reaching for the sky."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a disguise of emotions, concealing the true self behind a painted facade."
-  },
-  {
-    "term": "moon",
-    "clue": "I'm a nocturnal companion, casting a silvery glow on the world below."
-  },
-  {
-    "term": "riddle",
-    "clue": "I'm a puzzle of words, challenging the mind and teasing with hidden meanings."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a fluffy canvas, drifting across the sky and changing shape with the wind."
-  },
-  {
-    "term": "footprints",
-    "clue": "I'm a trail of presence, marking the path traveled and the journey yet to unfold."
-  },
-  {
-    "term": "candle",
-    "clue": "I'm a source of warmth, flickering in the darkness and casting a comforting glow."
-  },
-  {
-    "term": "reflection",
-    "clue": "I'm a mirrored image, capturing the world in a distorted yet captivating form."
-  },
-  {
-    "term": "river",
-    "clue": "I'm a flowing ribbon, carving paths through landscapes and carrying stories downstream."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a mask of disguise, concealing the true self beneath a masquerade."
-  },
-  {
-    "term": "firefly",
-    "clue": "I'm a tiny luminary, lighting up the night with my enchanting glow."
-  },
-  {
-    "term": "whisper",
-    "clue": "I'm a gentle breeze of secrets, carried on hushed voices and delicate gestures."
-  },
-  {
-    "term": "sunrise",
-    "clue": "I'm a golden spectacle, painting the sky with hues of warmth and new beginnings."
-  },
-  {
-    "term": "dream",
-    "clue": "I'm a realm of possibilities, where imagination weaves tapestries of the impossible."
+    "term": "leaf",
+    "clue": "Dances in the breeze."
   },
   {
     "term": "mountain",
-    "clue": "I'm a towering presence, standing firm and witnessing the passage of time."
-  },
-  {
-    "term": "maze",
-    "clue": "I'm a labyrinth of confusion, where paths twist and turn, challenging those who enter."
-  },
-  {
-    "term": "raindrop",
-    "clue": "I'm a gift from the clouds, falling gently to nourish the earth below."
-  },
-  {
-    "term": "song",
-    "clue": "I'm a melody of emotions, resonating through time and touching the heart and soul."
-  },
-  {
-    "term": "secret",
-    "clue": "I'm a hidden treasure, known only to the few who hold the key to unlock me."
-  },
-  {
-    "term": "footprints",
-    "clue": "I'm a trace of existence, marking the path taken and the memories left behind."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a floating mist, adorning the sky with my fluffy presence."
-  },
-  {
-    "term": "silhouette",
-    "clue": "I'm a dark outline, capturing the essence of form and leaving room for imagination."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a facade of emotions, hiding the true self behind a painted expression."
-  },
-  {
-    "term": "moon",
-    "clue": "I'm a celestial companion, illuminating the night with my gentle radiance."
-  },
-  {
-    "term": "journey",
-    "clue": "I'm an adventure into the unknown, filled with twists and turns along the way."
+    "clue": "Stands tall and majestic."
   },
   {
     "term": "river",
-    "clue": "I'm a flowing ribbon, carrying stories and nourishing the lands I pass."
+    "clue": "Flows with grace."
   },
   {
-    "term": "key",
-    "clue": "I'm a symbol of access, unlocking doors to new possibilities and hidden realms."
+    "term": "cloud",
+    "clue": "Floats in the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Guides the way."
+  },
+  {
+    "term": "bird",
+    "clue": "Sings a melodious tune."
+  },
+  {
+    "term": "flower",
+    "clue": "Blooms with beauty."
   },
   {
     "term": "sun",
-    "clue": "I'm a radiant ball of light, casting warmth and brightness upon the world."
+    "clue": "Brings warmth and light."
   },
   {
-    "term": "reflection",
-    "clue": "I'm a mirrored image, capturing the world in a different perspective."
-  },
-  {
-    "term": "wind",
-    "clue": "I'm a gentle whisper, carrying nature's voice and caressing the earth with unseen hands."
-  },
-  {
-    "term": "footsteps",
-    "clue": "I'm a trace of presence, marking the path taken and the memories left behind."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a fluffy canvas, floating lazily across the sky, shaped by the wind's gentle touch."
-  },
-  {
-    "term": "star",
-    "clue": "I'm a distant spark, a shimmering jewel in the vastness of the night sky."
-  },
-  {
-    "term": "bridge",
-    "clue": "I'm a connection between worlds, spanning divides and creating new paths."
+    "term": "rain",
+    "clue": "Cleanses the earth."
   },
   {
     "term": "tree",
-    "clue": "I'm a pillar of life, rooted in the earth and reaching for the sky."
+    "clue": "Provides shelter."
   },
   {
-    "term": "mask",
-    "clue": "I'm a disguise of emotions, concealing the true self behind a painted facade."
-  },
-  {
-    "term": "moon",
-    "clue": "I'm a nocturnal companion, casting a silvery glow on the world below."
-  },
-  {
-    "term": "riddle",
-    "clue": "I'm a puzzle of words, challenging the mind and teasing with hidden meanings."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a fluffy canvas, drifting across the sky and changing shape with the wind."
-  },
-  {
-    "term": "footprints",
-    "clue": "I'm a trail of presence, marking the path traveled and the journey yet to unfold."
-  },
-  {
-    "term": "candle",
-    "clue": "I'm a source of warmth, flickering in the darkness and casting a comforting glow."
-  },
-  {
-    "term": "reflection",
-    "clue": "I'm a mirrored image, capturing the world in a distorted yet captivating form."
-  },
-  {
-    "term": "river",
-    "clue": "I'm a flowing ribbon, carving paths through landscapes and carrying stories downstream."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a mask of disguise, concealing the true self beneath a masquerade."
-  },
-  {
-    "term": "firefly",
-    "clue": "I'm a tiny luminary, lighting up the night with my enchanting glow."
-  },
-  {
-    "term": "whisper",
-    "clue": "I'm a gentle breeze of secrets, carried on hushed voices and delicate gestures."
-  },
-  {
-    "term": "sunrise",
-    "clue": "I'm a golden spectacle, painting the sky with hues of warmth and new beginnings."
-  },
-  {
-    "term": "dream",
-    "clue": "I'm a realm of possibilities, where imagination weaves tapestries of the impossible."
+    "term": "breeze",
+    "clue": "Whispers gently."
   },
   {
     "term": "mountain",
-    "clue": "I'm a towering presence, standing firm and witnessing the passage of time."
-  },
-  {
-    "term": "maze",
-    "clue": "I'm a labyrinth of confusion, where paths twist and turn, challenging those who enter."
-  },
-  {
-    "term": "raindrop",
-    "clue": "I'm a gift from the clouds, falling gently to nourish the earth below."
-  },
-  {
-    "term": "song",
-    "clue": "I'm a melody of emotions, resonating through time and touching the heart and soul."
-  },
-  {
-    "term": "secret",
-    "clue": "I'm a hidden treasure, known only to the few who hold the key to unlock me."
-  },
-  {
-    "term": "footprints",
-    "clue": "I'm a trace of existence, marking the path taken and the memories left behind."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a floating mist, adorning the sky with my fluffy presence."
-  },
-  {
-    "term": "silhouette",
-    "clue": "I'm a dark outline, capturing the essence of form and leaving room for imagination."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a facade of emotions, hiding the true self behind a painted expression."
+    "clue": "Offers breathtaking views."
   },
   {
     "term": "moon",
-    "clue": "I'm a celestial companion, illuminating the night with my gentle radiance."
+    "clue": "Inspires awe."
   },
   {
-    "term": "journey",
-    "clue": "I'm an adventure into the unknown, filled with twists and turns along the way."
+    "term": "ocean",
+    "clue": "Holds vast mysteries."
+  },
+  {
+    "term": "beach",
+    "clue": "Invites relaxation."
+  },
+  {
+    "term": "cloud",
+    "clue": "Floats in the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Sparkles in the night."
+  },
+  {
+    "term": "fire",
+    "clue": "Flickers and dances."
+  },
+  {
+    "term": "bird",
+    "clue": "Takes flight."
+  },
+  {
+    "term": "flower",
+    "clue": "Blooms with vibrant colors."
   },
   {
     "term": "river",
-    "clue": "I'm a flowing ribbon, carrying stories and nourishing the lands I pass."
+    "clue": "Flows with tranquility."
   },
   {
-    "term": "key",
-    "clue": "I'm a symbol of access, unlocking doors to new possibilities and hidden realms."
+    "term": "sunrise",
+    "clue": "Welcomes a new day."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the sky."
+  },
+  {
+    "term": "tree",
+    "clue": "Grows tall and strong."
+  },
+  {
+    "term": "rain",
+    "clue": "Brings life to the land."
+  },
+  {
+    "term": "star",
+    "clue": "Shines with brilliance."
+  },
+  {
+    "term": "ocean",
+    "clue": "Holds hidden wonders."
+  },
+  {
+    "term": "beach",
+    "clue": "Invites relaxation."
+  },
+  {
+    "term": "cloud",
+    "clue": "Floats in the sky."
+  },
+  {
+    "term": "bird",
+    "clue": "Sings a sweet melody."
+  },
+  {
+    "term": "flower",
+    "clue": "Emits a fragrant scent."
+  },
+  {
+    "term": "river",
+    "clue": "Flows gracefully."
+  },
+  {
+    "term": "mountain",
+    "clue": "Stands tall and proud."
+  },
+  {
+    "term": "moon",
+    "clue": "Glimmers in the night sky."
   },
   {
     "term": "sun",
-    "clue": "I'm a radiant ball of light, casting warmth and brightness upon the world."
-  },
-  {
-    "term": "reflection",
-    "clue": "I'm a mirrored image, capturing the world in a different perspective."
+    "clue": "Radiates warmth and light."
   },
   {
     "term": "wind",
-    "clue": "I'm a gentle whisper, carrying nature's voice and caressing the earth with unseen hands."
+    "clue": "Whispers through the trees."
   },
   {
-    "term": "footsteps",
-    "clue": "I'm a trace of presence, marking the path taken and the memories left behind."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a fluffy canvas, floating lazily across the sky, shaped by the wind's gentle touch."
-  },
-  {
-    "term": "star",
-    "clue": "I'm a distant spark, a shimmering jewel in the vastness of the night sky."
-  },
-  {
-    "term": "bridge",
-    "clue": "I'm a connection between worlds, spanning divides and creating new paths."
-  },
-  {
-    "term": "tree",
-    "clue": "I'm a pillar of life, rooted in the earth and reaching for the sky."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a disguise of emotions, concealing the true self behind a painted facade."
-  },
-  {
-    "term": "moon",
-    "clue": "I'm a nocturnal companion, casting a silvery glow on the world below."
-  },
-  {
-    "term": "riddle",
-    "clue": "I'm a puzzle of words, challenging the mind and teasing with hidden meanings."
-  },
-  {
-    "term": "cloud",
-    "clue": "I'm a fluffy canvas, drifting across the sky and changing shape with the wind."
-  },
-  {
-    "term": "footprints",
-    "clue": "I'm a trail of presence, marking the path traveled and the journey yet to unfold."
-  },
-  {
-    "term": "candle",
-    "clue": "I'm a source of warmth, flickering in the darkness and casting a comforting glow."
-  },
-  {
-    "term": "reflection",
-    "clue": "I'm a mirrored image, capturing the world in a distorted yet captivating form."
-  },
-  {
-    "term": "river",
-    "clue": "I'm a flowing ribbon, carving paths through landscapes and carrying stories downstream."
-  },
-  {
-    "term": "mask",
-    "clue": "I'm a mask of disguise, concealing the true self beneath a masquerade."
-  },
-  {
-    "term": "firefly",
-    "clue": "I'm a tiny luminary, lighting up the night with my enchanting glow."
-  },
-  {
-    "term": "whisper",
-    "clue": "I'm a gentle breeze of secrets, carried on hushed voices and delicate gestures."
-  },
-  {
-    "term": "sunrise",
-    "clue": "I'm a golden spectacle, painting the sky with hues of warmth and new beginnings."
-  },
-  {
-    "term": "dream",
-    "clue": "I'm a realm of possibilities, where imagination weaves tapestries of the impossible."
+    "term": "leaf",
+    "clue": "Falls gently to the ground."
   },
   {
     "term": "mountain",
-    "clue": "I'm a towering presence, standing firm and witnessing the passage of time."
+    "clue": "Rises majestically."
   },
   {
-    "term": "maze",
-    "clue": "I'm a labyrinth of confusion, where paths twist and turn, challenging those who enter."
+    "term": "river",
+    "clue": "Meanders through the landscape."
+  },
+  {
+    "term": "cloud",
+    "clue": "Drifts lazily across the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Twinkles in the night."
+  },
+  {
+    "term": "bird",
+    "clue": "Nests in the trees."
+  },
+  {
+    "term": "flower",
+    "clue": "Attracts bees and butterflies."
+  },
+  {
+    "term": "sunrise",
+    "clue": "Paints the sky with colors."
+  },
+  {
+    "term": "moonlight",
+    "clue": "Bathes the world in silver."
+  },
+  {
+    "term": "river",
+    "clue": "Flows peacefully."
+  },
+  {
+    "term": "mountain",
+    "clue": "Stands as a majestic landmark."
+  },
+  {
+    "term": "beach",
+    "clue": "Invites barefoot walks."
+  },
+  {
+    "term": "birdsong",
+    "clue": "Fills the air with music."
+  },
+  {
+    "term": "star",
+    "clue": "Lights up the night sky."
   },
   {
     "term": "raindrop",
-    "clue": "I'm a gift from the clouds, falling gently to nourish the earth below."
+    "clue": "Patters on the ground."
+  },
+  {
+    "term": "wind",
+    "clue": "Whistles through the trees."
+  },
+  {
+    "term": "leaf",
+    "clue": "Changes colors in the fall."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the heavens."
   }
 ]
