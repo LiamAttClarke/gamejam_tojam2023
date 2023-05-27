@@ -1,12 +1,12 @@
 import { PhysicsBody } from "../../shared/types/PhysicsBody"
 import { IVector } from "../../shared/types/IVector";
 
-export interface IComputeNextPhysicsBodyPosition {
-  (deltaT: number, body: PhysicsBody): IVector;
+export interface IUpdatePhysicsBody {
+  (deltaT: number, body: PhysicsBody): void;
 }
 
-// FOR: IVAN
-export const computeNextPosition: IComputeNextPhysicsBodyPosition = (deltaT: number, body: PhysicsBody) => {
+// Any problems? Talk to Ivan
+export const computeNextPosition: IUpdatePhysicsBody = (deltaT: number, body: PhysicsBody) => {
 
   let time_factor: number = (deltaT / body.lastDeltaT);
   let delta_x: number = (body.position.x - body.lastPosition.x + body.acceleration.x) * time_factor;
@@ -17,7 +17,5 @@ export const computeNextPosition: IComputeNextPhysicsBodyPosition = (deltaT: num
   body.lastPosition = body.position;
   body.position.x = new_x;
   body.position.y = new_y;
-  // why do we need to return anything? let's just update it here
-  return { x: new_x, y: new_y };
 };
 
