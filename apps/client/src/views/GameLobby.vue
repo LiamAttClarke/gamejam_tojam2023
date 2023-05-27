@@ -3,7 +3,7 @@
     <h1 class="text-lg">Game Lobby</h1>
 
     <button>Create New Game</button>
-    <input type="text" id="roomInput" v-model:="roomId" placeholder="Enter Room ID">
+    <input type="text" id="roomInput" v-model="roomId" placeholder="Enter Room ID">
     <button>Join  Game</button>
   </div>
 </template>
