@@ -3,6 +3,7 @@ import { Game } from "shared/types/Game";
 import { Player } from "../../shared/types/Player";
 import Vector from "../../shared/Vector";
 import { IVector } from "shared/types/IVector";
+import matches from "./matches.json";
 
 // FOR: LIAM
 
@@ -34,8 +35,16 @@ export class Room {
     return Boolean(this._game);
   }
 
+  get game(): Game|null {
+    return this._game;
+  }
+
   constructor(roomId: string) {
     this._id = roomId;
+  }
+
+  private getNextMatch(): { term: string, clue: string } {
+    return matches[Math.floor(Math.random() * matches.length)];
   }
 
   getGameSnapshot(): Game {
@@ -45,9 +54,13 @@ export class Room {
 
   startGame() {
     if (this._game) this.endGame();
+    const match = this.getNextMatch();
     this._game = {
       id: crypto.randomUUID(),
       startTimeMS: new Date().getTime(),
+      term: match.term,
+      clue: match.clue,
+      lastGuess: "",
       players: this._sockets.map(()),
       trails: []
     };
@@ -55,6 +68,10 @@ export class Room {
 
   endGame() {
     this._game = null;
+  }
+
+  update() {
+
   }
 
   getPlayer(playerId: string): Player|null {
@@ -104,7 +121,6 @@ export class Room {
     if (!this._sockets.length) {
       this.destroy();
     }
-
   }
 
   destroy() {
