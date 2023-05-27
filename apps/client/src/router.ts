@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Welcome from './components/Welcome.vue';
+import Welcome from './views/Welcome.vue';
 import CharacterSelect from './views/CharacterSelect.vue';
 import Game from './components/GameRenderer.vue';
 import Lobby from './views/GameLobby.vue';

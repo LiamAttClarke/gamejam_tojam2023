@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import PhaserRenderer from './components/GameRenderer.vue';
 import { GameManager } from './GameManager';
+import { useGameManagerStore } from './stores/gameManager';
 import type { Player } from '../../shared/types/Player';
 import { onMounted,ref } from 'vue';
 
 const gameManager = GameManager.getInstance();
+const gameManagerStore = useGameManagerStore();
 
 const liam: Player = {
   id: crypto.randomUUID(),

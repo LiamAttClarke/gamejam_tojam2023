@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import CharacterTile from '../components/CharacterTile.vue';
+import CharacterTile from '../components/CharacterTile.vue'
+
+import { ref } from 'vue'
+
+const selectedCharacter = ref()
 /*
 import RoundButton from './RoundButton.vue';
 import {GameManager} from '../GameManager';
@@ -17,23 +21,40 @@ function addPlayer(){
   gameManager.addPlayer(player);
 }
 */
+
+var selected: Array<Boolean> = [false, false, false]
+
+function selectCharacter(character: String) {
+  console.log(character, selectedCharacter.value)
+}
 </script>
 
 <template>
   <div class="container">
-    <h1>Select your pooper!</h1>
+    <h1 class="uppercase text-3xl font-bold tracking-tight text-black">Select your pooper!</h1>
     <div class="button-container">
-    <CharacterTile class="btn">
-      <img src="../assets/fox-pixel.png" alt="test" width="100" height="100">
-    </CharacterTile>
-    <CharacterTile class="btn">
-      <img src="../assets/cat-pixel.png" alt="test" width="100" height="100">
-    </CharacterTile>
-    <CharacterTile class="btn">
-      <img src="../assets/dog-pixel.png" alt="test" width="100" height="100">
-    </CharacterTile>
-  </div>
-  <button @click="addPlayer">Add Player</button>
+      <CharacterTile
+        class="btn"
+        character="fox"
+        @change="selectCharacter"
+        v-model="selectedCharacter"
+      >
+      </CharacterTile>
+      <CharacterTile
+        class="btn"
+        character="dog"
+        @change="selectCharacter"
+        v-model="selectedCharacter"
+      >
+      </CharacterTile>
+      <CharacterTile
+        class="btn"
+        character="cat"
+        @change="selectCharacter"
+        v-model="selectedCharacter"
+      >
+      </CharacterTile>
+    </div>
   </div>
 </template>
 
