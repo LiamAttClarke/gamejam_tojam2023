@@ -4,6 +4,7 @@ import Welcome from './components/Welcome.vue';
 import CharacterSelect from './components/CharacterSelect.vue';
 import Game from './components/GameRenderer.vue';
 import Lobby from './components/GameLobby.vue';
+import GameRoom from './components/GameRoom.vue';
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -11,6 +12,7 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/character', component: CharacterSelect },
   { path: '/lobby', component: Lobby },
   { path: '/game', component: Game },
+  { path: '/room', component: GameRoom },
 ];
 
 const router = createRouter({
