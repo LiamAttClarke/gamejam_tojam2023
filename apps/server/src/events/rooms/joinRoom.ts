@@ -4,7 +4,7 @@ import constants from "../../../../shared/constants";
 import onDirectionChange from "../onDirectionChange";
 
 export default (socket: Socket) => (roomId: string) => {
-  console.log('!!', roomId)
+  console.log(`join room, socket id: ${socket.id}, roomId: ${roomId}`);
   const roomManager = RoomManager.getInstance();
 
   roomManager.joinRoom(roomId, socket)

@@ -3,7 +3,10 @@ import { Player } from "../../shared/types/Player";
 import Vector from "../../shared/Vector";
 import matches from "./matches.json";
 import { IVector } from "../../shared/types/IVector";
-import { Game } from "../../shared/types/Game";
+import { Game, GameStatus } from "../../shared/types/Game";
+import { updatePhysicsBody } from "./physics";
+import { Trail } from "../../shared/types/Trail";
+import crypto from 'crypto';
 
 // FOR: LIAM
 
@@ -14,17 +17,17 @@ import { Game } from "../../shared/types/Game";
  * [x] add/remove players from room
  * [x] start/end games
  * [x] get snapshot of game state
- * [] evaluate win/lose conditions
- * [] Must compute next position for a given player
+ * [x] evaluate win/lose conditions
+ * [x] Must compute next position for a given player
+ * [x] update trail
  */
 export class Room {
-  private _id: string;
   private _sockets: Socket[] = [];
-  private _game: Game|null = null;
+  private _game: Game;
   private _destroyed = false;
 
   get id (): string {
-    return this._id;
+    return this._game.id;
   }
 
   get destroyed(): boolean {
@@ -39,8 +42,23 @@ export class Room {
     return this._game;
   }
 
-  constructor(roomId: string) {
-    this._id = roomId;
+  constructor(roomId: string, options: {
+    durationMS: number;
+    guesserId?: string;
+  }) {
+    this._game = {
+      id: roomId,
+      status: GameStatus.Inactive,
+      durationMS: options.durationMS,
+      guesserId: options.guesserId || "",
+      startTimeMS: 0,
+      lastUpdateMS: 0,
+      term: '',
+      clue: '',
+      guesses: [],
+      players: [],
+      trails: []
+    };
   }
 
   private getNextMatch(): { term: string, clue: string } {
@@ -52,32 +70,104 @@ export class Room {
     return structuredClone(this._game);
   }
 
-  startGame() {
-    if (this._game) this.endGame();
+  startGame(options: {
+    durationMS: number;
+    guesserId?: string;
+  }) {
+    if (this._sockets.length < 2) throw new Error("Room must have at least 2 players to start.");
     const match = this.getNextMatch();
-    this._game = {
-      id: crypto.randomUUID(),
-      startTimeMS: new Date().getTime(),
-      term: match.term,
-      clue: match.clue,
-      lastGuess: "",
-      players: [],
-      trails: []
-    };
+    const now = new Date().getTime();
+    this._game.startTimeMS = now;
+    this._game.lastUpdateMS = now;
+    this._game.term = match.term;
+    this._game.clue = match.clue;
 
+    // Create players for each socket
     this._sockets.forEach(s => this.addPlayer(s));
+    if (!this._game.guesserId) {
+      // If no guesser is set, choose a random one.
+      this._game.guesserId = this._game.players[Math.floor(Math.random() * this._game.players.length)].id;
+    } else {
+      // Make sure guesser exists
+      const guesser = this.getPlayer(this._game.guesserId);
+      if (!guesser) throw new Error(`Guesser '${this._game.guesserId}' not found.`);
+    }
   }
 
   endGame() {
-    this._game = null;
+    this._game.status = GameStatus.Inactive;
+  }
+
+  submitGuess(playerId: string, guess: string) {
+    if (!this._game) throw new Error("Game has not started yet.");
+    const player = this.getPlayer(playerId);
+    if (!player) throw new Error(`Player '${playerId}' not found.`);
+    if (this._game.guesserId !== playerId) throw new Error(`Player '${playerId}' is not the guesser.`);
+
+    const normalizedGuess = guess.trim();
+    if (!normalizedGuess) throw new Error("Empty guesses are not allowed.")
+    this._game?.guesses.push(normalizedGuess);
+  }
+
+  setPlayerAcceleration(playerId: string, acceleration: Vector) {
+    const player = this.getPlayer(playerId);
+    if (!player) throw new Error(`Player '${playerId}' not found.`);
+    player.body.acceleration = acceleration;
+  }
+
+  addTrailPoint(playerId: string, position: Vector) {
+    const player = this.getPlayer(playerId);
+    if (!player) throw new Error(`Player '${playerId}' not found.`);
+    let trail: Trail;
+    if (player.currentTrailId) {
+      // Use current trail
+      const currentTrail = this.getTrail(player.currentTrailId);
+      if (!currentTrail) throw new Error(`Could not find current trail for player '${playerId}'.`);
+      trail = currentTrail;
+    } else {
+      // create new trail
+      trail = {
+        id: crypto.randomUUID(),
+        playerId,
+        points: [],
+      };
+      player.currentTrailId = trail.id
+    }
+    trail.points.push(position);
+  }
+
+  endTrail(playerId: string) {
+    const player = this.getPlayer(playerId);
+    if (!player) throw new Error(`Player '${playerId}' not found.`);
+    player.currentTrailId = null;
   }
 
   update() {
-
+    if (!this._game) throw new Error("A game is not in progress.");
+    const now = new Date().getTime();
+    const delta = now - this._game.lastUpdateMS;
+    const gameTimeElapsed = now - this._game.startTimeMS;
+    // Update player physics bodies (positions)
+    this.game?.players.forEach(p => updatePhysicsBody(delta, p.body));
+    // Check lose condition
+    if (gameTimeElapsed > this._game.durationMS) {
+      this._game.status = GameStatus.Failure;
+    }
+    // Check win condition
+    const correctGuess = this._game.guesses.find(g => g.toLowerCase() === this._game!.term.toLowerCase());
+    if (correctGuess) {
+      this._game.status = GameStatus.Victory;
+    }
+    // Update game time
+    this._game.lastUpdateMS = now;
   }
 
   getPlayer(playerId: string): Player|null {
     return this._game?.players.find(p => p.id === playerId) || null;
+  }
+
+  getTrail(trailId: string): Trail|null {
+    return this._game?.trails.find(t => t.id === trailId) || null;
   }
 
   addPlayer(socket: Socket, options?: {

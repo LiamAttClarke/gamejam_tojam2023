@@ -1,10 +1,14 @@
 {
   "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/node": "^20.2.5",
     "concurrently": "^8.0.1"
   },
   "scripts": {
     "dev": "concurrently \"cd apps/client && npm run dev\" \"cd apps/server && npm run dev\"",
     "install": "concurrently \"cd apps/client && npm install\" \"cd apps/server && npm install\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
-
 }

@@ -2,6 +2,8 @@ import { Server, Socket } from "socket.io";
 import { Room } from "./Room";
 import constants from "../../shared/constants";
 
+import crypto from 'crypto';
+
 // FOR: ALEX
 
 /** Manages the lifecycle/CRUD of rooms
@@ -32,8 +34,10 @@ export class RoomManager {
     return RoomManager.instance;
   }
 
-  createRoom(roomId: string, socket: Socket) {
-    const room = new Room(roomId);
+  createRoom(socket: Socket) {
+    const roomId = crypto.randomUUID().substring(0, 5);
+
+    const room = new Room(roomId, { durationMS: 1000 * 60 * 10 });
     room.addPlayer(socket);
 
     this.rooms.push(room);
@@ -76,8 +80,8 @@ export class RoomManager {
   }
 
   getRoomForSocket(socket: Socket) {
-    for(const room of this.rooms) {
-      if(room.hasSocket(socket)) return room;
+    for (const room of this.rooms) {
+      if (room.hasSocket(socket)) return room;
     }
 
     return null;
