@@ -1,10 +1,46 @@
 [
   {
     "term": "Cat",
-    "clue": "A fury friend."
+    "clue": "A furry friend."
   },
   {
-    "term": "Ivan",
-    "clue": "A fury friend."
+    "term": "Dog",
+    "clue": "Man's best friend."
+  },
+  {
+    "term": "Elephant",
+    "clue": "Has a long trunk."
+  },
+  {
+    "term": "Lion",
+    "clue": "King of the jungle."
+  },
+  {
+    "term": "Giraffe",
+    "clue": "Has a long neck."
+  },
+  {
+    "term": "Dolphin",
+    "clue": "An intelligent marine mammal."
+  },
+  {
+    "term": "Penguin",
+    "clue": "Wears a tuxedo-like coat."
+  },
+  {
+    "term": "Tiger",
+    "clue": "Has distinctive stripes."
+  },
+  {
+    "term": "Kangaroo",
+    "clue": "Carries its young in a pouch."
+  },
+  {
+    "term": "Bear",
+    "clue": "A large and powerful animal."
+  },
+  {
+    "term": "Goat",
+    "clue": "Known for their horns and beards."
   }
 ]
