@@ -1,46 +1,502 @@
 [
   {
-    "term": "Cat",
-    "clue": "A furry friend."
+    "term": "shadow",
+    "clue": "Vanishes in light."
   },
   {
-    "term": "Dog",
-    "clue": "Man's best friend."
+    "term": "home",
+    "clue": "Holds secrets."
   },
   {
-    "term": "Elephant",
-    "clue": "Has a long trunk."
+    "term": "road",
+    "clue": "Leads to the unknown."
   },
   {
-    "term": "Lion",
-    "clue": "King of the jungle."
+    "term": "fireworks",
+    "clue": "Colors burst in the sky."
   },
   {
-    "term": "Giraffe",
-    "clue": "Has a long neck."
+    "term": "forest",
+    "clue": "Whispers secrets."
   },
   {
-    "term": "Dolphin",
-    "clue": "An intelligent marine mammal."
+    "term": "key",
+    "clue": "Unlocks mysteries."
   },
   {
-    "term": "Penguin",
-    "clue": "Wears a tuxedo-like coat."
+    "term": "book",
+    "clue": "Transports to other realms."
   },
   {
-    "term": "Tiger",
-    "clue": "Has distinctive stripes."
+    "term": "friendship",
+    "clue": "Shares moments."
   },
   {
-    "term": "Kangaroo",
-    "clue": "Carries its young in a pouch."
+    "term": "rain",
+    "clue": "Falls, brings rhythm."
   },
   {
-    "term": "Bear",
-    "clue": "A large and powerful animal."
+    "term": "fire",
+    "clue": "Illuminates the darkness."
   },
   {
-    "term": "Goat",
-    "clue": "Known for their horns and beards."
+    "term": "snow",
+    "clue": "Blankets the earth."
+  },
+  {
+    "term": "moon",
+    "clue": "Lights the night."
+  },
+  {
+    "term": "sun",
+    "clue": "Radiates warmth."
+  },
+  {
+    "term": "cloud",
+    "clue": "Drifts in the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Guides the lost."
+  },
+  {
+    "term": "ocean",
+    "clue": "Conceals mysteries."
+  },
+  {
+    "term": "beach",
+    "clue": "Meets the sea."
+  },
+  {
+    "term": "candle",
+    "clue": "Flickers, warms."
+  },
+  {
+    "term": "river",
+    "clue": "Flows through valleys."
+  },
+  {
+    "term": "mountain",
+    "clue": "Touches the sky."
+  },
+  {
+    "term": "flower",
+    "clue": "Blooms beautifully."
+  },
+  {
+    "term": "sunset",
+    "clue": "Paints the sky."
+  },
+  {
+    "term": "breeze",
+    "clue": "Whispers softly."
+  },
+  {
+    "term": "rainbow",
+    "clue": "Colors in the sky."
+  },
+  {
+    "term": "bird",
+    "clue": "Sings melodies."
+  },
+  {
+    "term": "tree",
+    "clue": "Stands tall."
+  },
+  {
+    "term": "beauty",
+    "clue": "Elicits awe."
+  },
+  {
+    "term": "island",
+    "clue": "Surrounded by water."
+  },
+  {
+    "term": "starfish",
+    "clue": "Celestial creature."
+  },
+  {
+    "term": "seashell",
+    "clue": "Echoes the ocean."
+  },
+  {
+    "term": "wave",
+    "clue": "Crashes on the shore."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the sky."
+  },
+  {
+    "term": "birdsong",
+    "clue": "Serenades the morning."
+  },
+  {
+    "term": "castle",
+    "clue": "Stands strong."
+  },
+  {
+    "term": "ship",
+    "clue": "Sails the seas."
+  },
+  {
+    "term": "fish",
+    "clue": "Swims in water."
+  },
+  {
+    "term": "butterfly",
+    "clue": "Flutters with grace."
+  },
+  {
+    "term": "sunrise",
+    "clue": "Welcomes a new day."
+  },
+  {
+    "term": "sand",
+    "clue": "Shifts with the wind."
+  },
+  {
+    "term": "wave",
+    "clue": "Rides on the ocean."
+  },
+  {
+    "term": "tree",
+    "clue": "Shades with branches."
+  },
+  {
+    "term": "bird",
+    "clue": "Takes flight."
+  },
+  {
+    "term": "flower",
+    "clue": "Grows from the earth."
+  },
+  {
+    "term": "moonlight",
+    "clue": "Illuminates the night."
+  },
+  {
+    "term": "river",
+    "clue": "Flows through the land."
+  },
+  {
+    "term": "mountain",
+    "clue": "Stands tall and majestic."
+  },
+  {
+    "term": "beauty",
+    "clue": "Captivates the senses."
+  },
+  {
+    "term": "beach",
+    "clue": "Sandy shoreline."
+  },
+  {
+    "term": "birdsong",
+    "clue": "Melodies in the air."
+  },
+  {
+    "term": "star",
+    "clue": "Shines brightly."
+  },
+  {
+    "term": "raindrop",
+    "clue": "Falls from the sky."
+  },
+  {
+    "term": "tree",
+    "clue": "Provides shade."
+  },
+  {
+    "term": "river",
+    "clue": "Flows with grace."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the heavens."
+  },
+  {
+    "term": "flower",
+    "clue": "Blossoms with color."
+  },
+  {
+    "term": "cloud",
+    "clue": "Floats in the atmosphere."
+  },
+  {
+    "term": "moon",
+    "clue": "Illuminates the darkness."
+  },
+  {
+    "term": "ocean",
+    "clue": "Teems with life."
+  },
+  {
+    "term": "sunrise",
+    "clue": "Signals a new day."
+  },
+  {
+    "term": "butterfly",
+    "clue": "Flits through the air."
+  },
+  {
+    "term": "bird",
+    "clue": "Swoops and soars."
+  },
+  {
+    "term": "flower",
+    "clue": "Attracts bees."
+  },
+  {
+    "term": "tree",
+    "clue": "Grows tall and strong."
+  },
+  {
+    "term": "moonlight",
+    "clue": "Cast ethereal glow."
+  },
+  {
+    "term": "river",
+    "clue": "Flows endlessly."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the sky."
+  },
+  {
+    "term": "beach",
+    "clue": "Sandy shoreline."
+  },
+  {
+    "term": "birdsong",
+    "clue": "Melodies in the air."
+  },
+  {
+    "term": "star",
+    "clue": "Shines brightly."
+  },
+  {
+    "term": "raindrop",
+    "clue": "Falls from the sky."
+  },
+  {
+    "term": "wind",
+    "clue": "Whispers through the trees."
+  },
+  {
+    "term": "leaf",
+    "clue": "Dances in the breeze."
+  },
+  {
+    "term": "mountain",
+    "clue": "Stands tall and majestic."
+  },
+  {
+    "term": "river",
+    "clue": "Flows with grace."
+  },
+  {
+    "term": "cloud",
+    "clue": "Floats in the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Guides the way."
+  },
+  {
+    "term": "bird",
+    "clue": "Sings a melodious tune."
+  },
+  {
+    "term": "flower",
+    "clue": "Blooms with beauty."
+  },
+  {
+    "term": "sun",
+    "clue": "Brings warmth and light."
+  },
+  {
+    "term": "rain",
+    "clue": "Cleanses the earth."
+  },
+  {
+    "term": "tree",
+    "clue": "Provides shelter."
+  },
+  {
+    "term": "breeze",
+    "clue": "Whispers gently."
+  },
+  {
+    "term": "mountain",
+    "clue": "Offers breathtaking views."
+  },
+  {
+    "term": "moon",
+    "clue": "Inspires awe."
+  },
+  {
+    "term": "ocean",
+    "clue": "Holds vast mysteries."
+  },
+  {
+    "term": "beach",
+    "clue": "Invites relaxation."
+  },
+  {
+    "term": "cloud",
+    "clue": "Floats in the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Sparkles in the night."
+  },
+  {
+    "term": "fire",
+    "clue": "Flickers and dances."
+  },
+  {
+    "term": "bird",
+    "clue": "Takes flight."
+  },
+  {
+    "term": "flower",
+    "clue": "Blooms with vibrant colors."
+  },
+  {
+    "term": "river",
+    "clue": "Flows with tranquility."
+  },
+  {
+    "term": "sunrise",
+    "clue": "Welcomes a new day."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the sky."
+  },
+  {
+    "term": "tree",
+    "clue": "Grows tall and strong."
+  },
+  {
+    "term": "rain",
+    "clue": "Brings life to the land."
+  },
+  {
+    "term": "star",
+    "clue": "Shines with brilliance."
+  },
+  {
+    "term": "ocean",
+    "clue": "Holds hidden wonders."
+  },
+  {
+    "term": "beach",
+    "clue": "Invites relaxation."
+  },
+  {
+    "term": "cloud",
+    "clue": "Floats in the sky."
+  },
+  {
+    "term": "bird",
+    "clue": "Sings a sweet melody."
+  },
+  {
+    "term": "flower",
+    "clue": "Emits a fragrant scent."
+  },
+  {
+    "term": "river",
+    "clue": "Flows gracefully."
+  },
+  {
+    "term": "mountain",
+    "clue": "Stands tall and proud."
+  },
+  {
+    "term": "moon",
+    "clue": "Glimmers in the night sky."
+  },
+  {
+    "term": "sun",
+    "clue": "Radiates warmth and light."
+  },
+  {
+    "term": "wind",
+    "clue": "Whispers through the trees."
+  },
+  {
+    "term": "leaf",
+    "clue": "Falls gently to the ground."
+  },
+  {
+    "term": "mountain",
+    "clue": "Rises majestically."
+  },
+  {
+    "term": "river",
+    "clue": "Meanders through the landscape."
+  },
+  {
+    "term": "cloud",
+    "clue": "Drifts lazily across the sky."
+  },
+  {
+    "term": "star",
+    "clue": "Twinkles in the night."
+  },
+  {
+    "term": "bird",
+    "clue": "Nests in the trees."
+  },
+  {
+    "term": "flower",
+    "clue": "Attracts bees and butterflies."
+  },
+  {
+    "term": "sunrise",
+    "clue": "Paints the sky with colors."
+  },
+  {
+    "term": "moonlight",
+    "clue": "Bathes the world in silver."
+  },
+  {
+    "term": "river",
+    "clue": "Flows peacefully."
+  },
+  {
+    "term": "mountain",
+    "clue": "Stands as a majestic landmark."
+  },
+  {
+    "term": "beach",
+    "clue": "Invites barefoot walks."
+  },
+  {
+    "term": "birdsong",
+    "clue": "Fills the air with music."
+  },
+  {
+    "term": "star",
+    "clue": "Lights up the night sky."
+  },
+  {
+    "term": "raindrop",
+    "clue": "Patters on the ground."
+  },
+  {
+    "term": "wind",
+    "clue": "Whistles through the trees."
+  },
+  {
+    "term": "leaf",
+    "clue": "Changes colors in the fall."
+  },
+  {
+    "term": "mountain",
+    "clue": "Reaches for the heavens."
   }
 ]
