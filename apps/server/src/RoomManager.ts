@@ -1,6 +1,6 @@
 import { Server, Socket } from "socket.io";
 import { Room } from "./Room";
-import constants from "shared/constants";
+import constants from "../../shared/constants";
 
 // FOR: ALEX
 
@@ -33,19 +33,17 @@ export class RoomManager {
   }
 
   createRoom(roomId: string, socket: Socket) {
-    this.rooms.push({ id: roomId, sockets: [socket], state: new RoomState() });
+    const room = new Room(roomId);
+    room.addPlayer(socket);
+
+    this.rooms.push(room);
     socket.join(roomId);
   }
 
-  // TODO: add constraint to make sure a player can't join more than one room.
   joinRoom(roomId: string, socket: Socket) {
-    this.rooms.forEach((curr_room: Room) => {
-      const this_user: Socket | undefined = curr_room.users.find((s: Socket) => s === socket);
-      this_user?.leave(curr_room.id);
-    });
     const room = this.rooms.find(room => room.id === roomId);
     if (room) {
-      room.sockets.push(socket);
+      room.addPlayer(socket)
       socket.join(roomId);
     }
   }
@@ -53,11 +51,7 @@ export class RoomManager {
   leaveRoom(roomId: string, socket: Socket) {
     const room = this.rooms.find(room => room.id === roomId);
     if (room) {
-      room.sockets = room.sockets.filter(user => user.id !== socket.id);
-      socket.leave(roomId);
-      if (room.sockets.length === 0) {
-        this.rooms = this.rooms.filter(r => r.id !== roomId);
-      }
+      room.removePlayer(socket.id)
     }
   }
 
@@ -70,12 +64,11 @@ export class RoomManager {
 
   handleDisconnect(socket: Socket) {
     // Removing socket from all rooms
-    this.rooms = this.rooms.map(room => {
-      room.sockets = room.sockets.filter(user => user.id !== socket.id);
-      return room;
-    });
+    for(const room of this.rooms) {
+      room.removePlayer(socket.id);
+    }
     // Removing empty rooms
-    this.rooms = this.rooms.filter(room => room.sockets.length > 0);
+    this.rooms = this.rooms.filter(room => room.getNumPlayers() > 0);
   }
 
   getRooms() {
@@ -84,9 +77,7 @@ export class RoomManager {
 
   getRoomForSocket(socket: Socket) {
     for(const room of this.rooms) {
-      for(const user of room.sockets) {
-        if(user.id === socket.id) return room;
-      }
+      if(room.hasSocket(socket)) return room;
     }
 
     return null;

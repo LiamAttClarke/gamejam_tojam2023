@@ -1,8 +1,9 @@
 import { Socket } from "socket.io";
-import { Game } from "shared/types/Game";
 import { Player } from "../../shared/types/Player";
 import Vector from "../../shared/Vector";
-import { IVector } from "shared/types/IVector";
+import matches from "./matches.json";
+import { IVector } from "../../shared/types/IVector";
+import { Game } from "../../shared/types/Game";
 
 // FOR: LIAM
 
@@ -34,8 +35,16 @@ export class Room {
     return Boolean(this._game);
   }
 
+  get game(): Game|null {
+    return this._game;
+  }
+
   constructor(roomId: string) {
     this._id = roomId;
+  }
+
+  private getNextMatch(): { term: string, clue: string } {
+    return matches[Math.floor(Math.random() * matches.length)];
   }
 
   getGameSnapshot(): Game {
@@ -45,16 +54,26 @@ export class Room {
 
   startGame() {
     if (this._game) this.endGame();
+    const match = this.getNextMatch();
     this._game = {
       id: crypto.randomUUID(),
       startTimeMS: new Date().getTime(),
-      players: this._sockets.map(()),
+      term: match.term,
+      clue: match.clue,
+      lastGuess: "",
+      players: [],
       trails: []
     };
+
+    this._sockets.forEach(s => this.addPlayer(s));
   }
 
   endGame() {
     this._game = null;
+  }
+
+  update() {
+
   }
 
   getPlayer(playerId: string): Player|null {
@@ -72,6 +91,7 @@ export class Room {
       id: playerId,
       name: "Anonymous",
       body: {
+        lastDeltaT: new Date().getTime(),
         position: new Vector(0, 0),
         lastPosition: new Vector(0, 0),
         acceleration: new Vector(0, 0),
@@ -104,7 +124,14 @@ export class Room {
     if (!this._sockets.length) {
       this.destroy();
     }
+  }
 
+  getNumPlayers() {
+    return this._sockets.length;
+  }
+
+  hasSocket(socket: Socket) {
+    return this._sockets.filter(s => s.id === socket.id).length > 0;
   }
 
   destroy() {
@@ -114,5 +141,4 @@ export class Room {
     }
     this._destroyed = true;
   }
-
 }
