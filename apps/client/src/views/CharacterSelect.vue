@@ -1,24 +1,39 @@
 <script setup lang="ts">
+import CharacterTile from '../components/CharacterTile.vue';
+/*
 import RoundButton from './RoundButton.vue';
+import {GameManager} from '../GameManager';
+const gameManager = GameManager.getInstance();
 // see other players and their selections
 // see available clickable characters
 // if host, start game button
+function addPlayer(){
+
+  const player: Player = {
+  id: crypto.randomUUID(),
+  name: "Liam",
+  position: [Math.random()*200, Math.random()*200]
+};
+  gameManager.addPlayer(player);
+}
+*/
 </script>
 
 <template>
   <div class="container">
     <h1>Select your pooper!</h1>
     <div class="button-container">
-    <RoundButton class="btn">
+    <CharacterTile class="btn">
       <img src="../assets/fox-pixel.png" alt="test" width="100" height="100">
-    </RoundButton>
-    <RoundButton class="btn">
+    </CharacterTile>
+    <CharacterTile class="btn">
       <img src="../assets/cat-pixel.png" alt="test" width="100" height="100">
-    </RoundButton>
-    <RoundButton class="btn">
+    </CharacterTile>
+    <CharacterTile class="btn">
       <img src="../assets/dog-pixel.png" alt="test" width="100" height="100">
-    </RoundButton>
+    </CharacterTile>
   </div>
+  <button @click="addPlayer">Add Player</button>
   </div>
 </template>
 
