@@ -1,5 +1,8 @@
-import Curve from '../../../shared/dtos/Curve';
+import { RoomManager } from '../RoomManager';
+import broadcastRoomState from './rooms/broadcastRoomState';
 
 export const onUpdateClients = () => {
-  console.log(JSON.stringify(new Curve(2)));
+  for(const room of RoomManager.getInstance().getRooms()) {
+    broadcastRoomState(room.id, room.state);
+  }
 }

@@ -4,8 +4,9 @@ export default Object.freeze({
     CREATE_ROOM: 'create_room',
     JOIN_ROOM: 'join_room',
     LEAVE_ROOM: 'leave_room',
-    SEND_MSG_TO_ROOM: 'send_msg_to_room',
     DISCONNECT: 'disconnect',
+    BROADCAST_ROOM_STATE: 'broadcast_room_state',
+    DIRECTION_CHANGE: 'direction_change',
   },
   MOVE_DIRECTIONS: {
     UP: 'up',
