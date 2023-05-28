@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router'
 
-import Welcome from './views/Welcome.vue';
-import CharacterSelect from './views/CharacterSelect.vue';
-import Game from './components/GameRenderer.vue';
-import Lobby from './views/GameLobby.vue';
-import GameRoom from './views/GameRoom.vue';
-
+import Welcome from './views/Welcome.vue'
+import CharacterSelect from './views/CharacterSelect.vue'
+import Game from './components/GameRenderer.vue'
+import Lobby from './views/GameLobby.vue'
+import GameRoom from './views/GameRoom.vue'
+import GameOver from './views/GameOver.vue'
 
 const routes: Array<RouteRecordRaw> = [
   { path: '/', component: Welcome },
@@ -13,11 +13,12 @@ const routes: Array<RouteRecordRaw> = [
   { path: '/lobby', component: Lobby },
   { path: '/game', component: Game },
   { path: '/room', component: GameRoom },
-];
+  { path: '/over', component: GameOver }
+]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router

@@ -7,7 +7,7 @@ import type { IVector } from '../../shared/types/IVector'
 import { onMounted, ref, inject } from 'vue'
 
 const gameManager = GameManager.getInstance()
-const useGameManagerStore = inject('gameManager');
+const useGameManagerStore = inject('gameManager')
 
 const liam: Player = {
   id: crypto.randomUUID(),
@@ -25,9 +25,7 @@ gameManager.addTrail({
   ]
 })
 
-onMounted(() => {
-
-})
+onMounted(() => {})
 
 // TODO: remove events on component destroy
 const aMag = 10
@@ -72,6 +70,7 @@ setInterval(() => {
       <router-link to="/character">CharacterSelect </router-link>
       <router-link to="/room">GameRoom </router-link>
       <router-link to="/game">Game </router-link>
+      <router-link to="/over">GameOver </router-link>
       <router-view></router-view>
     </div>
   </main>
