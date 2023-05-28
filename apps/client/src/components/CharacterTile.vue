@@ -50,6 +50,7 @@ label input {
 }
 
 .wrapper input:checked ~ .tile {
-  border: 5px solid brown;
+  border: 1px solid brown;
+  outline: 4px solid brown;
 }
 </style>
