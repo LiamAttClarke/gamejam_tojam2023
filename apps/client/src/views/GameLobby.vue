@@ -1,19 +1,22 @@
 <template>
+  <div class="w-full h-screen bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 background-animate">
+
   <div class="flex flex-col items-center pt-12">
     <h1 class="uppercase text-6xl font-bold tracking-tight text-black">Poop Deck</h1>
     <div class="flex flex-col items-center pt-10">
         <h2 class="text-2xl font-bold tracking-tight text-black">Start Some Shit</h2>
-        <ButtonBasic class="mt-4" @click="createRoom">Create New Game</ButtonBasic>
+        <ButtonBasic class="mt-4" :class="{'bg-red-400 text-white' : loadingJoin || loadingCreate }" :disabled="loadingCreate || loadingJoin" @click="createRoom"><div v-if="loadingCreate">Loading</div><div v-else>Create New Game</div></ButtonBasic>
     </div>
     <div class="flex flex-col items-center pt-12">
       <h2 class="text-2xl font-bold tracking-tight text-black">Join a Shitty Gang</h2>
       <div class="pt-4">
         <input class="h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 uppercase" type="text" id="roomInput" v-model="roomIdInput" placeholder="Enter Room ID">
-        <ButtonBasic class="ml-4" @click="joinRoom">Join Game</ButtonBasic>
+        <ButtonBasic class="ml-4" :class="{'bg-red-400 text-white' : loadingJoin || loadingCreate }" :disabled="loadingCreate || loadingJoin" @click="joinRoom"><div v-if="loadingJoin">Loading</div><div v-else>Join Game</div></ButtonBasic>
 
       </div>
     </div>
    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -28,6 +31,8 @@ const socket = ref();
 const router = useRouter();
 
 const useGameManagerStore = inject('gameManager')
+let loadingCreate = ref(false);
+let loadingJoin = ref(false);
 
 function createRoom() {
   console.log('create room');
@@ -38,6 +43,7 @@ function createRoom() {
 
   });
   //We should really wait for the server to respond, but for now we'll just leave the page
+  loadingCreate.value = true;
   setTimeout(() => {
     router.push('/character');
   }, 3000);
@@ -49,6 +55,7 @@ function joinRoom() {
   }else{
     console.log('no room id');
   }
+  loadingJoin.value = true;
   roomIdInput.value = roomIdInput.value.toLowerCase();
 
   socket.value.emit('join_room', roomIdInput.value, (response) => {
@@ -89,3 +96,23 @@ onUnmounted(() => {
 });
 */
 </script>
+
+<style scoped lang="css">
+.background-animate {
+    background-size: 400%;
+
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+  }
+
+  @keyframes AnimationName {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+</style>

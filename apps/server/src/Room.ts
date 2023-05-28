@@ -127,25 +127,28 @@ export class Room {
     player.body.acceleration = acceleration;
   }
 
-  addTrailPoint(playerId: string, position: Vector) {
+  addTrailPoint(playerId: string, position: IVector) {
     const player = this.getPlayer(playerId);
     if (!player) throw new Error(`Player '${playerId}' not found.`);
-    let trail: Trail;
-    if (player.currentTrailId) {
-      // Use current trail
-      const currentTrail = this.getTrail(player.currentTrailId);
-      if (!currentTrail) throw new Error(`Could not find current trail for player '${playerId}'.`);
-      trail = currentTrail;
-    } else {
-      // create new trail
-      trail = {
-        id: crypto.randomUUID(),
-        playerId,
-        points: [],
-      };
-      player.currentTrailId = trail.id
-    }
+
+    // Use current trail
+    const trail = this.getTrail(player.currentTrailId as string);
+    if (!trail) throw new Error(`Could not find current trail for player '${playerId}'.`);
+
     trail.points.push(position);
+  }
+
+  startTrail(playerId: string) {
+    const player = this.getPlayer(playerId);
+    if (!player) throw new Error(`Player '${playerId}' not found.`);
+
+    const trail = {
+      id: crypto.randomUUID(),
+      playerId,
+      points: [],
+    };
+    this.addTrail(trail);
+    player.currentTrailId = trail.id
   }
 
   endTrail(playerId: string) {
@@ -186,6 +189,10 @@ export class Room {
     return this._game?.trails.find(t => t.id === trailId) || null;
   }
 
+  addTrail(trail: Trail) {
+    this._game?.trails.push(trail);
+  }
+
   addPlayer(socket: Socket, options?: {
     position?: IVector,
     mass?: number,
@@ -206,6 +213,7 @@ export class Room {
       },
       character: CharacterKind.Goat,
       currentTrailId: null,
+      trailPointCooldown: 10
     };
     this._game?.players.push(player);
     return player;

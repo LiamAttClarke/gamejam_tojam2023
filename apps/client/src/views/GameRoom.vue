@@ -37,11 +37,10 @@ function onKeyDown(event: KeyboardEvent) {
       //x=1, y=0
       break
     case 'q':
-      isPooping.value = true
-      //startPoop()
+      useGameManagerStore.emitStartTrail();
       break
     case 'e':
-      isPooping.value = false
+      useGameManagerStore.emitStopTrail();
       break
   }
 }

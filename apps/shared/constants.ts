@@ -9,7 +9,9 @@ export default Object.freeze({
     DIRECTION_CHANGE: 'direction_change',
     NAME_CHANGE: 'name_change',
     CHARACTER_CHANGE: 'character_change',
-    GUESS_RECEIVE: "guess_receive"
+    GUESS_RECEIVE: "guess_receive",
+    TRAIL_ON: "trail_on",
+    TRAIL_OFF: "trail_off",
   },
   MOVE_DIRECTIONS: {
     UP: 'up',
