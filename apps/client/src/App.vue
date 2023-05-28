@@ -26,58 +26,14 @@ gameManager.addTrail({
 })
 
 onMounted(() => {
-  document.addEventListener('keydown', onKeyDown)
-  document.addEventListener('keyup', onKeyUp)
+
 })
 
 // TODO: remove events on component destroy
 const aMag = 10
 const isPooping = ref(false)
 const currentTrailId = ref()
-function onKeyDown(event: KeyboardEvent) {
-  const player = gameManager.getPlayer(liam.id)
-  if (!player) return
-  const acceleration = [0, 0]
-  //aw x=-1 y=-1
-  //wd x=1 y=1
-  //as x=-1 y=-1
-  //sd x=1 y=-1
-  switch (event.key) {
-    case 'w':
-      acceleration[1] -= aMag
-      useGameManagerStore.sendInput({x: 0, y: 1})
-      //x=0, y=1
-      break
-    case 'a':
-      acceleration[0] -= aMag
-      useGameManagerStore.sendInput({x: -1, y: 0})
-      //x=-1, y=0
-      break
-    case 's':
-      acceleration[1] += aMag
-      useGameManagerStore.sendInput({x: 0, y: -1})
-      //x=0, y=-1
-      break
-    case 'd':
-      acceleration[0] += aMag
-      useGameManagerStore.sendInput({x: 1, y: 0})
-      //x=1, y=0
-      break
-    case 'q':
-      isPooping.value = true
-      startPoop()
-      break
-    case 'e':
-      isPooping.value = false
-      break
-  }
-  const newPosition = [player.position[0] + acceleration[0], player.position[1] + acceleration[1]]
-  gameManager.setPlayerPosition(player.id, newPosition)
-}
-function onKeyUp(event: KeyboardEvent) {
-  //Stop accelerating
-  useGameManagerStore.sendInput({x: 0, y: 0})
-}
+
 // start pooping
 function startPoop() {
   const player = gameManager.getPlayer(liam.id)
