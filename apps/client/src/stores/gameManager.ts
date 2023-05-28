@@ -79,13 +79,13 @@ export const useGameManagerStore = defineStore('gameManager', {
       }
     },
     emitStartTrail() {
-      this._socket?.emit('trail_on', name, (response) => {
+      this._socket?.emit('trail_on', (response) => {
         // Handle the response from the server
         console.log(response)
       })
     },
     emitStopTrail() {
-      this._socket?.emit('trail_off', name, (response) => {
+      this._socket?.emit('trail_off', (response) => {
         // Handle the response from the server
         console.log(response)
       })
