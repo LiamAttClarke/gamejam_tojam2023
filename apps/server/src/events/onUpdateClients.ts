@@ -1,4 +1,3 @@
-import { Room } from '../Room';
 import { RoomManager } from '../RoomManager';
 import broadcastRoomState from './rooms/broadcastRoomState';
 import { updatePhysicsBody } from '../physics';
@@ -25,6 +24,18 @@ export const onUpdateClients = () => {
   console.log('')
 
   for(const room of RoomManager.getInstance().getRooms()) {
+    for(const player of room.getPlayers()) {
+      if(player.currentTrailId) {
+        // If we're ready to add a trail point..
+        if(player.trailPointCooldown === 0) {
+          room.addTrailPoint(player.id, player.body.position);
+          player.trailPointCooldown = 10;
+        } else {
+          player.trailPointCooldown--;
+        }
+      }
+    }
+
     broadcastRoomState(room.id, room.getGameSnapshot());
   }
 }
