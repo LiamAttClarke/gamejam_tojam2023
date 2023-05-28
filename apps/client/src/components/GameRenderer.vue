@@ -6,7 +6,6 @@ const container = ref()
 const useGameManagerStore = inject('gameManager');
 
 onMounted(() => {
-  console.log(useGameManagerStore.game.scene)
   // init the players in to phaser
   //useGameManagerStore.game.setPlayers(useGameManagerStore.players);
   const oldParent = useGameManagerStore.game.canvas.parentNode;
