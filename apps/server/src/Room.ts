@@ -225,7 +225,8 @@ export class Room {
   }
 
   hasSocket(socket: Socket) {
-    return this._sockets.filter(s => s.id === socket.id).length > 0;
+    return this._game?.players.filter(p => p.id === socket.id).length > 0;
+    // return this._sockets.filter(s => s.id === socket.id).length > 0;
   }
 
   destroy() {
