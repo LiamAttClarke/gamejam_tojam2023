@@ -17,5 +17,21 @@ export const updatePhysicsBody: IUpdatePhysicsBody = (deltaT: number, body: Phys
   body.lastPosition = body.position;
   body.position.x = new_x;
   body.position.y = new_y;
+
+  if(body.position.x < 0) {
+    body.position.x = 0;
+  }
+
+  if(body.position.x > 800) {
+    body.position.x = 800;
+  }
+
+  if(body.position.y > 0) {
+    body.position.y = 0;
+  }
+
+  if(body.position.y < -550) {
+    body.position.y = -550;
+  }
 };
 
