@@ -44,7 +44,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-<div class="flex flex-col justify-center items-center w-full h-screen bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 background-animate">
+<div class="flex flex-col justify-center items-center w-full h-screen background">
     <div class="flex flex-col items-center z-10">
       <p class="text-lg font-bold tracking-tight text-indigo-900">Pooping in public made easier</p>
       <h1 class="uppercase text-6xl font-bold tracking-tight text-black">Game of Poops</h1>
@@ -65,5 +65,4 @@ onUnmounted(() => {
   background-position: center;
   background-size: cover;
 }
-
 </style>
