@@ -49,6 +49,12 @@ export const useGameManagerStore = defineStore('gameManager', {
         // Handle the response from the server
         console.log(response);
       });
+    },
+    sendGuess(guess: string){
+      this._socket.emit('guess', guess, (response) => {
+        // Handle the response from the server
+        console.log(response);
+      });
     }
   },
 });
