@@ -59,8 +59,11 @@ onMounted(() => {
   socket.value = io('http://localhost:3000');
 
   socket.value.on('broadcast_room_state',(response) => {
+    const data = JSON.parse(response);
     // Handle the response from the server
-    console.log(response);
+    console.log(JSON.parse(response));
+    useGameManagerStore.setPlayers(data.players);
+    useGameManagerStore.setRoomId(data.id);
   });
 });
 
