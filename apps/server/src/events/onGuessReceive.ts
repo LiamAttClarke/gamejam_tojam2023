@@ -1,7 +1,7 @@
 import { Socket } from "socket.io"
 import { RoomManager } from "../RoomManager";
 
-export default (socket: Socket) => (guess: string): Record<string, any> => {
+export default (socket: Socket) => (guess: string): void => {
   console.log(`${socket.id} is making a guess: ${guess}`);
 
   const roomManager = RoomManager.getInstance();
@@ -10,21 +10,22 @@ export default (socket: Socket) => (guess: string): Record<string, any> => {
 
   if (!room) {
     console.log(`Can't find room, whoops!`);
-    return { error_occured: true, correct_guess: false };
+    return;
   }
 
   const player = room.getPlayer(socket.id);
   if (player) {
     player.name = guess;
-    return { error_occured: true, correct_guess: false };
+    return;
   }
 
   socket.to(room.id).emit(`A guess was made, ${guess}!`);
 
+  room.game?.guesses.push(guess);
   const correct_answer = room.game?.term;
   if (guess === correct_answer) {
-    return { error_occured: false, correct_guess: true };
+    return;
   }
 
-  return { error_occured: false, correct_guess: false };
+  return;
 };

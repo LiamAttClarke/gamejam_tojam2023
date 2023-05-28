@@ -3,6 +3,10 @@ import { RoomManager } from '../RoomManager';
 import broadcastRoomState from './rooms/broadcastRoomState';
 import { updatePhysicsBody } from '../physics';
 
+
+
+
+
 export const onUpdateClients = () => {
   console.clear();
   console.log('ROOMS')
@@ -19,6 +23,10 @@ export const onUpdateClients = () => {
       //calculate next position for player
       const currentTime = new Date().getTime();
       updatePhysicsBody((currentTime-player.body.lastDeltaT)/1000, player.body);
+      if (winningConditionSatisfied(room)) {
+        console.log("Game complete!");
+      }
+
     }
     console.log();
   }
@@ -27,4 +35,21 @@ export const onUpdateClients = () => {
   for(const room of RoomManager.getInstance().getRooms()) {
     broadcastRoomState(room.id, room.getGameSnapshot());
   }
+}
+
+
+function winningConditionSatisfied(room_to_check: Room): Boolean {
+  //const guesser_id = room_to_check.game?.guesserId;
+  const correct_answer = room_to_check.game?.term;
+  let done:Boolean = false;
+  while (room_to_check.game?.guesses.length !== 0) {
+    const curr_guess = room_to_check.game?.guesses.pop();
+    console.log("Player guessed " + curr_guess);
+    if (!done && curr_guess === correct_answer) {
+      console.log("Player won!");
+    }
+
+
+  };
+  return done;
 }
