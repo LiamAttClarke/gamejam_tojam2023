@@ -50,6 +50,50 @@ export class CanvasScene extends Phaser.Scene {
   }
 
   create () {
+    // Create animations
+    this.anims.create({
+      key: `${CharacterKind.Armadillo}_walk`,
+      frameRate: 7,
+      frames: this.anims.generateFrameNumbers(CharacterKind.Armadillo, { start: 3, end: 5 }),
+      repeat: -1
+    });
+    this.anims.create({
+      key: `${CharacterKind.Cat}_walk`,
+      frameRate: 7,
+      frames: this.anims.generateFrameNumbers(CharacterKind.Cat, { start: 3, end: 5 }),
+      repeat: -1
+    });
+    this.anims.create({
+      key: `${CharacterKind.Dog}_walk`,
+      frameRate: 7,
+      frames: this.anims.generateFrameNumbers(CharacterKind.Dog, { start: 3, end: 5 }),
+      repeat: -1
+    });
+    this.anims.create({
+      key: `${CharacterKind.Fox}_walk`,
+      frameRate: 7,
+      frames: this.anims.generateFrameNumbers(CharacterKind.Fox, { start: 3, end: 5 }),
+      repeat: -1
+    });
+    this.anims.create({
+      key: `${CharacterKind.Goat}_walk`,
+      frameRate: 7,
+      frames: this.anims.generateFrameNumbers(CharacterKind.Goat, { start: 3, end: 5 }),
+      repeat: -1
+    });
+    this.anims.create({
+      key: `${CharacterKind.Hedgehog}_walk`,
+      frameRate: 7,
+      frames: this.anims.generateFrameNumbers(CharacterKind.Hedgehog, { start: 3, end: 5 }),
+      repeat: -1
+    });
+    this.anims.create({
+      key: `${CharacterKind.Porcupine}_walk`,
+      frameRate: 7,
+      frames: this.anims.generateFrameNumbers(CharacterKind.Porcupine, { start: 3, end: 5 }),
+      repeat: -1
+    });
+
     for (const player of this._gameManager.players) {
       this.addPlayer(player, CharacterKind.Hedgehog);
     }
