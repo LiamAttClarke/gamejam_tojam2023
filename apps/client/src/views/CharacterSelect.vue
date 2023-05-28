@@ -23,7 +23,8 @@ function addPlayer(){
 }
 */
 
-const useGameManagerStore = inject('gameManagerStore');
+const useGameManagerStore = inject('gameManager');
+console.log(useGameManagerStore);
 
 const players: Array<Object> = [
   {
