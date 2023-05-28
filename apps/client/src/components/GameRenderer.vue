@@ -23,16 +23,12 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-4 ml-64">
+  <div class="ml-64 w-full h-full">
     <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-      <div class="game-renderer" ref="container"></div>
+      <div class="game-renderer w-full h-full " ref="container"></div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.phaser-renderer {
-  width: 100%;
-  height: 100%;
-}
 </style>
