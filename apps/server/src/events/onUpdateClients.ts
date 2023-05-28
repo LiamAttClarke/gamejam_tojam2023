@@ -7,6 +7,20 @@ export const onUpdateClients = () => {
   console.log('ROOMS')
   for(const room of RoomManager.getInstance().getRooms()) {
     console.log(`- id: ${room.id}`);
+
+    if(room.game?.trails) {
+      if(room.game.trails.length > 0) {
+        console.log(`- trails: `)
+        let trailNum = 0;
+        for(const trail of room.game.trails) {
+          process.stdout.write(`(#${trailNum}, ${trail.points.length}) `);
+          trailNum++;
+        }
+      }
+    } else {
+      console.log(`- num trails: 0`);
+    }
+
     for(const player of room.getPlayers()) {
       console.log(`- player: ${player.id}, name: ${player.name}`);
       console.log(`  last position x: ${player.body.lastPosition.x}, last position y: ${player.body.lastPosition.y}`);
@@ -15,10 +29,12 @@ export const onUpdateClients = () => {
       console.log(`  drag: ${player.body.drag}`);
       console.log(`  lastDeltaT: ${player.body.lastDeltaT}`);
       console.log(`  mass: ${player.body.mass}`)
+
       //calculate next position for player
       const currentTime = new Date().getTime();
       updatePhysicsBody((currentTime-player.body.lastDeltaT)/1000, player.body);
     }
+
     console.log();
   }
   console.log('')
