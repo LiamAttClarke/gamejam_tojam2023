@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 import ButtonBasic from './ButtonBasic.vue'
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 const router = useRouter()
-
+const useGameManagerStore = inject('gameManager')
 var inputValue = ref('')
 
 // Debounce function to delay action execution
@@ -11,6 +11,7 @@ let debounceTimer: ReturnType<typeof setTimeout>
 
 const submitGuess = () => {
   console.log(inputValue.value)
+  useGameManagerStore.sendGuess(inputValue.value)
   //   // Clear the previous debounce timer
   //   clearTimeout(debounceTimer)
 
