@@ -62,4 +62,4 @@ Follow these steps to get things up and running.
     ```
 ## Attributions
 
-Background taken from  [Background Vectors by Vecteezy](https://www.vecteezy.com/free-vector/background).
+Background maybe by [Background Vectors by Vecteezy](https://www.vecteezy.com/free-vector/background).
