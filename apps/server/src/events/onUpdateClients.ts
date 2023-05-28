@@ -14,12 +14,13 @@ export const onUpdateClients = () => {
 
     if(room.game?.trails) {
       if(room.game.trails.length > 0) {
-        console.log(`- trails: `)
+        process.stdout.write(`- trails: `)
         let trailNum = 0;
         for(const trail of room.game.trails) {
           process.stdout.write(`(#${trailNum}, ${trail.points.length}) `);
           trailNum++;
         }
+        process.stdout.write(`\n`)
       }
     } else {
       console.log(`- num trails: 0`);
