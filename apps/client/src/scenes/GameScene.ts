@@ -144,7 +144,9 @@ export class GameScene extends Phaser.Scene {
     const playerObj = this._playerObjs.get(player.id);
     if (!playerObj) throw new Error(`No GameObject found for player: ${player.id}`);
     // TODO: update player
-    playerObj.setPosition(player.position[0], player.position[1]);
+    playerObj.setPosition(player.body.position.x, -player.body.position.y);
+    console.log(playerObj);
+    //console.log(playerObj.);
 
   }
 
@@ -160,8 +162,8 @@ export class GameScene extends Phaser.Scene {
         //playerObj.x = player.position[0];
         //playerObj.y = player.position[1];
         //console.log(player);
-        console.log(player.body.position);
-        playerObj.setPosition(player.body.position[0], player.body.position[1]);
+        //console.log(player.body.position);
+        this.updatePlayer(player);
       }
     }
 /*
