@@ -59,22 +59,11 @@ onUnmounted(() => {
 </template>
 
 <style scoped lang="css">
-.background-animate {
-    background-size: 400%;
-
-    -webkit-animation: AnimationName 3s ease infinite;
-    -moz-animation: AnimationName 5s ease infinite;
-    animation: AnimationName 5s ease infinite;
-  }
-
-  @keyframes AnimationName {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
+.background {
+  background-image: url('../assets/background.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 </style>
