@@ -14,6 +14,12 @@ export default (socket: Socket) => (direction: IVector) => {
     return;
   }
 
+  const player = room.getPlayer(socket.id);
+  if(player) {
+    // TODO: 🤷 I have no idea what I'm doing; halp
+    player.body.acceleration = direction;
+  }
+
   // TODO: find player in room, set their new direction
   // room.game.players.set(socket, direction);
 }
