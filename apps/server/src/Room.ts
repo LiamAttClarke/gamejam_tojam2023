@@ -193,7 +193,7 @@ export class Room {
         mass: options?.mass || 100,
         drag: options?.drag || 0.5
       },
-      character: CharacterKind.Armadillo,
+      character: CharacterKind.Goat,
       currentTrailId: null,
     };
     this._game?.players.push(player);
