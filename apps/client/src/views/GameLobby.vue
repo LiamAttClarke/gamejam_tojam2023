@@ -20,9 +20,11 @@
 import { ref, onMounted, inject, onUnmounted } from 'vue'
 import ButtonBasic from '../components/ButtonBasic.vue';
 import { io } from 'socket.io-client';
+import { useRouter } from 'vue-router';
 //import { useGameManagerStore } from '../stores/gameManager';
 const roomIdInput = ref('');
 const socket = ref();
+const router = useRouter();
 
 const useGameManagerStore = inject('gameManager')
 
@@ -32,7 +34,10 @@ function createRoom() {
   socket.value.emit('create_room', (response) => {
     // Handle the response from the server
     console.log(response);
+
   });
+  //We should really wait for the server to respond, but for now we'll just leave the page
+  router.push('/character');
 }
 function joinRoom() {
   if (roomIdInput.value!== '') {
@@ -49,8 +54,11 @@ function joinRoom() {
 
   socket.value.emit('join_room', roomIdInput.value, (response) => {
     // Handle the response from the server
+
     console.log(response);
   });
+  //We should really wait for the server to respond, but for now we'll just leave the page
+  router.push('/character');
 }
 
 onMounted(() => {

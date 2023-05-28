@@ -1,5 +1,6 @@
 import { Socket } from "socket.io";
 import { Player } from "../../shared/types/Player";
+import { CharacterKind } from "../../shared/types/Character";
 import Vector from "../../shared/Vector";
 import matches from "./matches.json";
 import { IVector } from "../../shared/types/IVector";
@@ -190,8 +191,9 @@ export class Room {
         lastPosition: new Vector(0, 0),
         acceleration: new Vector(0, 0),
         mass: options?.mass || 100,
-        drag: options?.drag || 0.5,
+        drag: options?.drag || 0.5
       },
+      character: CharacterKind.Armadillo,
       currentTrailId: null,
     };
     this._game?.players.push(player);

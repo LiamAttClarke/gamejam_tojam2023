@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import CharacterTile from '../components/CharacterTile.vue'
 import PlayerTile from '../components/PlayerTile.vue'
+import { CharacterKind } from '../../../shared/types/Character'
 
-import { ref, inject } from 'vue'
+import { ref, inject,toRef   } from 'vue'
+import type { Player } from 'shared/types/Player';
+
 
 const selectedCharacter = ref()
 /*
@@ -24,27 +27,15 @@ function addPlayer(){
 */
 
 const useGameManagerStore = inject('gameManager');
-console.log(useGameManagerStore);
 
-const players: Array<Object> = [
-  {
-    username: 'Artemy',
-    character: 'fox'
-  },
-  {
-    username: 'Test',
-    character: 'cat'
-  },
-  {
-    username: 'Spy',
-    character: 'unknown'
-  }
-]
+//const players = toRef(useGameManagerStore, 'players');
+//console.log(players);
 
-const joinCode: Number = useGameManagerStore.roomId;
+const joinCode: Number = ref(useGameManagerStore.roomId);
 
 function selectCharacter(character: String) {
   console.log(character, selectedCharacter.value)
+  useGameManagerStore.emitCharacterChange(character);
 }
 </script>
 
@@ -59,21 +50,21 @@ function selectCharacter(character: String) {
       <div class="button-container">
         <CharacterTile
           class="btn"
-          character="fox"
+          :character="CharacterKind.Fox"
           @change="selectCharacter"
           v-model="selectedCharacter"
         >
         </CharacterTile>
         <CharacterTile
           class="btn"
-          character="dog"
+          :character="CharacterKind.Dog"
           @change="selectCharacter"
           v-model="selectedCharacter"
         >
         </CharacterTile>
         <CharacterTile
           class="btn"
-          character="cat"
+          :character="CharacterKind.Cat"
           @change="selectCharacter"
           v-model="selectedCharacter"
         >
@@ -84,10 +75,11 @@ function selectCharacter(character: String) {
     <div class="players col-span-3">
       <h2 class="text-center text-2xl font-bold tracking-tight text-black">Other players</h2>
       <PlayerTile
-        v-for="player in players"
+        v-for="(player, index) in useGameManagerStore.players"
+        :key="index"
         class="my-3 mx-auto"
-        :username="player.username"
-        :character="player.character"
+        :username="player[1].name"
+        :character="player[1].character"
       ></PlayerTile>
     </div>
   </div>

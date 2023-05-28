@@ -2,17 +2,17 @@ import { defineStore } from 'pinia';
 import type { Trail } from 'shared/types/Trail';
 import type { Player } from 'shared/types/Player';
 import type { IVector } from 'shared/types/IVector';
+import { CharacterKind } from "shared/types/Character";
 
 // Define the store
 export const useGameManagerStore = defineStore('gameManager', {
   state: () => ({
-    _self: null as Player | null,
     _players: new Map<string, Player>(),
     _trails: new Map<string, Trail>(),
     _socket: null as WebSocket | null,
     _timer: 0,
     _roomId: '',
-    _joinCode: '3333',
+    _joinCode: '3333', //Deprecated
   }),
   getters: {
     players: (state) => state._players,
@@ -50,8 +50,27 @@ export const useGameManagerStore = defineStore('gameManager', {
         console.log(response);
       });
     },
+    emitNameChange(name: string){
+      this._socket?.emit('name_change', name, (response) => {
+        // Handle the response from the server
+        console.log(response);
+      });
+    },
+    emitCharacterChange(character: CharacterKind) {
+      if (Object.values(CharacterKind).includes(ch)) {
+        // Valid character kind
+        // Perform your logic here
+        this._socket?.emit('character_change', character, (response) => {
+          // Handle the response from the server
+          console.log(response);
+        });
+      } else {
+        // Invalid character kind
+        // Handle the error or provide a default behavior
+      }
+    },
     sendGuess(guess: string){
-      this._socket.emit('guess', guess, (response) => {
+      this._socket?.emit('guess', guess, (response) => {
         // Handle the response from the server
         console.log(response);
       });

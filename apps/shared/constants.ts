@@ -7,6 +7,8 @@ export default Object.freeze({
     DISCONNECT: 'disconnect',
     BROADCAST_ROOM_STATE: 'broadcast_room_state',
     DIRECTION_CHANGE: 'direction_change',
+    NAME_CHANGE: 'name_change',
+    CHARACTER_CHANGE: 'character_change',
   },
   MOVE_DIRECTIONS: {
     UP: 'up',
