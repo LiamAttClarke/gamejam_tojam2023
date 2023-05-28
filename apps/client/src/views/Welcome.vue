@@ -26,12 +26,20 @@ onMounted(() => {
     parent: container.value,
     scene: [SceneMap.AudioScene, SceneMap.WelcomeScene, SceneMap.GameScene],
     scale: {
-      mode: Phaser.Scale.FIT,
+      mode: Phaser.Scale.NONE,
       width: 800,
       height: 600,
     }
   }))
+  console.log(useGameManagerStore.game.canvas);
+
 })
+/*
+onUnmounted(() => {
+  const oldParent = useGameManagerStore.game.canvas.parentNode;
+  oldParent.removeChild(game.canvas);
+})
+*/
 </script>
 
 <template>
