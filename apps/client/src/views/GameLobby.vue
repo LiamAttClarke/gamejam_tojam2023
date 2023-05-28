@@ -8,7 +8,7 @@
     <div class="flex flex-col items-center pt-12">
       <h2 class="text-2xl font-bold tracking-tight text-black">Join a Shitty Gang</h2>
       <div class="pt-4">
-        <input class="h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-2.5" type="text" id="roomInput" v-model="roomIdInput" placeholder="Enter Room ID">
+        <input class="h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 uppercase" type="text" id="roomInput" v-model="roomIdInput" placeholder="Enter Room ID">
         <ButtonBasic class="ml-4" @click="joinRoom">Join Game</ButtonBasic>
 
       </div>
@@ -41,6 +41,7 @@ function joinRoom() {
   }else{
     console.log('no room id');
   }
+  roomIdInput.value = roomIdInput.value.toLowerCase();
 
   if(socket.value){
     socket.value = io('http://localhost:3000');

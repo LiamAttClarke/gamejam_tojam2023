@@ -41,7 +41,7 @@ const players: Array<Object> = [
   }
 ]
 
-const joinCode: Number = useGameManagerStore.joinCode;
+const joinCode: Number = useGameManagerStore.roomId;
 
 function selectCharacter(character: String) {
   console.log(character, selectedCharacter.value)
@@ -51,7 +51,7 @@ function selectCharacter(character: String) {
 <template>
   <div class="grid grid-cols-12">
     <div class="sidebar col-span-3">
-      <h2 class="text-2xl font-bold tracking-tight text-black">Join Code: {{ joinCode }}</h2>
+      <h2 class="text-2xl font-bold tracking-tight text-black">Join Code: <span class="uppercase">{{ joinCode }}</span></h2>
     </div>
 
     <div class="center-container col-span-6 px-4">
