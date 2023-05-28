@@ -72,21 +72,23 @@ function startGame() {
 </script>
 
 <template>
+  <div class="w-full h-screen bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 background-animate">
   <div class="grid grid-cols-12">
     <div class="sidebar col-span-3">
-      <h2 class="text-2xl font-bold tracking-tight text-black">
+      <h2 class="text-2xl font-bold tracking-tight text-black ml-3">
         Join Code: <span class="uppercase">{{ joinCode }}</span>
       </h2>
     </div>
 
-    <div class="center-container col-span-6 px-4">
+    <div class="center-container col-span-6 px-4 pt-10">
       <h1 class="uppercase text-3xl font-bold tracking-tight text-black">Select your pooper!</h1>
       <input
         type="text"
-        class="w-full border border-gray-300 rounded-md"
+        class="mt-5 w-full h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-2.5 uppercase"
+        placeholder="Name"
         @input="handleInputChange"
       />
-      <div class="selection-container">
+      <div class="selection-container mt-5">
         <CharacterTile
           class="btn"
           :character="CharacterKind.Goat"
@@ -132,6 +134,7 @@ function startGame() {
       ></PlayerTile>
     </div>
   </div>
+  </div>
 </template>
 
 <style scoped>
@@ -154,9 +157,21 @@ h1 {
   margin: 10px;
 }
 
-.sidebar {
-}
+.background-animate {
+    background-size: 400%;
 
-.players {
-}
+    -webkit-animation: AnimationName 3s ease infinite;
+    -moz-animation: AnimationName 5s ease infinite;
+    animation: AnimationName 5s ease infinite;
+  }
+
+  @keyframes AnimationName {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
 </style>
