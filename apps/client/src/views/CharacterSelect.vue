@@ -81,7 +81,7 @@ function startGame() {
         class="w-full border border-gray-300 rounded-md"
         @input="handleInputChange"
       />
-      <div class="button-container">
+      <div class="selection-container">
         <CharacterTile
           class="btn"
           :character="CharacterKind.Goat"
@@ -111,6 +111,9 @@ function startGame() {
         >
         </CharacterTile>
       </div>
+      <div class="flex justify-center items-center mt-10">
+        <ButtonBasic class="px-36 mx-auto" @click="startGame">Start Game</ButtonBasic>
+      </div>
     </div>
 
     <div class="players col-span-3">
@@ -123,7 +126,6 @@ function startGame() {
         :character="player[1].character"
       ></PlayerTile>
     </div>
-    <ButtonBasic class="mt-10 px-36 z-10" @click="startGame">Start Game</ButtonBasic>
   </div>
 </template>
 
@@ -137,7 +139,7 @@ h1 {
   align-items: center;
   height: 100%;
 }
-.button-container {
+.selection-container {
   display: flex;
   align-items: center;
   justify-content: center;
