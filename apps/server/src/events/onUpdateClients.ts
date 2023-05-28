@@ -3,9 +3,6 @@ import broadcastRoomState from './rooms/broadcastRoomState';
 import { updatePhysicsBody } from '../physics';
 import { Room } from "../Room";
 
-
-
-
 export const onUpdateClients = () => {
   console.clear();
   console.log('ROOMS')
@@ -20,10 +17,8 @@ export const onUpdateClients = () => {
           process.stdout.write(`(#${trailNum}, ${trail.points.length}) `);
           trailNum++;
         }
-        process.stdout.write(`\n`)
+        process.stdout.write('\n')
       }
-    } else {
-      console.log(`- num trails: 0`);
     }
 
     for(const player of room.getPlayers()) {
