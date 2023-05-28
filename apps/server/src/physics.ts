@@ -7,9 +7,10 @@ export interface IUpdatePhysicsBody {
 
 // Any problems? Talk to Ivan
 export const updatePhysicsBody: IUpdatePhysicsBody = (deltaT: number, body: PhysicsBody) => {
+  const scale_factor = 15;
   let time_factor: number = (deltaT / body.lastDeltaT);
-  let delta_x: number = (body.position.x - body.lastPosition.x + body.acceleration.x) * time_factor;
-  let delta_y: number = (body.position.y - body.lastPosition.y + body.acceleration.y) * time_factor;
+  let delta_x: number = (body.position.x - body.lastPosition.x + body.acceleration.x) * time_factor * scale_factor;
+  let delta_y: number = (body.position.y - body.lastPosition.y + body.acceleration.y) * time_factor * scale_factor;
   let new_x: number = body.lastPosition.x + delta_x;
   let new_y: number = body.lastPosition.y + delta_y;
   body.lastDeltaT = deltaT;
