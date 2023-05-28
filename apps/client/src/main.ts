@@ -13,7 +13,7 @@ const pinia = createPinia();
 app.use(pinia)
 
 // Provide the store to the app
-app.provide('gameManager', useGameManagerStore);
+app.provide('gameManager', useGameManagerStore());
 
 app.use(router)
 
