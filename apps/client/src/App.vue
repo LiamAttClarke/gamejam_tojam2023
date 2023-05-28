@@ -9,22 +9,6 @@ import { onMounted, ref, inject } from 'vue'
 const gameManager = GameManager.getInstance()
 const useGameManagerStore = inject('gameManager')
 
-const liam: Player = {
-  id: crypto.randomUUID(),
-  name: 'Liam',
-  position: [200, 200]
-}
-gameManager.addPlayer(liam)
-gameManager.addTrail({
-  id: crypto.randomUUID(),
-  ownerId: liam.id,
-  points: [
-    [0, 0],
-    [100, 200],
-    [150, 150]
-  ]
-})
-
 onMounted(() => {})
 
 // TODO: remove events on component destroy
@@ -33,6 +17,7 @@ const isPooping = ref(false)
 const currentTrailId = ref()
 
 // start pooping
+/*
 function startPoop() {
   const player = gameManager.getPlayer(liam.id)
   if (!player) return
@@ -47,7 +32,8 @@ function startPoop() {
     })
   }
 }
-
+*/
+/*
 //set interval where it will check if the player is pooping
 setInterval(() => {
   const player = gameManager.getPlayer(liam.id)
@@ -60,6 +46,7 @@ setInterval(() => {
     //console.log(gameManager.trails);
   }
 }, 1000)
+*/
 </script>
 
 <template>
