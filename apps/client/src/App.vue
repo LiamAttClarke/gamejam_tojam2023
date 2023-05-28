@@ -3,6 +3,7 @@ import PhaserRenderer from './components/GameRenderer.vue'
 import { GameManager } from './GameManager'
 import { useGameManagerStore } from './stores/gameManager'
 import type { Player } from '../../shared/types/Player'
+import type { IVector } from '../../shared/types/IVector'
 import { onMounted, ref, inject } from 'vue'
 
 const gameManager = GameManager.getInstance()
@@ -43,14 +44,17 @@ function onKeyDown(event: KeyboardEvent) {
   switch (event.key) {
     case 'w':
       acceleration[1] -= aMag
+      useGameManagerStore.sendInput({x: 0, y: 1})
       //x=0, y=1
       break
     case 'a':
       acceleration[0] -= aMag
+      useGameManagerStore.sendInput({x: -1, y: 0})
       //x=-1, y=0
       break
     case 's':
       acceleration[1] += aMag
+      useGameManagerStore.sendInput({x: 0, y: -1})
       //x=0, y=-1
       break
     case 'd':

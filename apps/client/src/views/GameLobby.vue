@@ -26,8 +26,6 @@ const socket = ref();
 
 const useGameManagerStore = inject('gameManager')
 
-function connectSocket(){}
-
 function createRoom() {
   console.log('create room');
   // Handle join event response
@@ -58,19 +56,22 @@ onMounted(() => {
   // Connect to the socket.io server
   socket.value = io('http://localhost:3000');
 
+  useGameManagerStore.setSocket(socket.value);
+
   socket.value.on('broadcast_room_state',(response) => {
     const data = JSON.parse(response);
     // Handle the response from the server
-    console.log(JSON.parse(response));
+    //console.log(JSON.parse(response));
     useGameManagerStore.setPlayers(data.players);
     useGameManagerStore.setRoomId(data.id);
   });
 });
-
+/*
 onUnmounted(() => {
   if (socket.value) {
     socket.value.disconnect();
     socket.value = null;
   }
 });
+*/
 </script>
