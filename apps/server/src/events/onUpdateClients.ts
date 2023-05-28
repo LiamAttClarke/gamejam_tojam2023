@@ -1,6 +1,7 @@
 import { Room } from '../Room';
 import { RoomManager } from '../RoomManager';
 import broadcastRoomState from './rooms/broadcastRoomState';
+import { updatePhysicsBody } from '../physics';
 
 export const onUpdateClients = () => {
   console.clear();
@@ -15,6 +16,9 @@ export const onUpdateClients = () => {
       console.log(`  drag: ${player.body.drag}`);
       console.log(`  lastDeltaT: ${player.body.lastDeltaT}`);
       console.log(`  mass: ${player.body.mass}`)
+      //calculate next position for player
+      const currentTime = new Date().getTime();
+      updatePhysicsBody((currentTime-player.body.lastDeltaT)/1000, player.body);
     }
     console.log();
   }

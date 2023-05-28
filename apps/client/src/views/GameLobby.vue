@@ -37,7 +37,9 @@ function createRoom() {
 
   });
   //We should really wait for the server to respond, but for now we'll just leave the page
-  router.push('/character');
+  setTimeout(() => {
+    router.push('/character');
+  }, 3000);
 }
 function joinRoom() {
   if (roomIdInput.value!== '') {
@@ -58,7 +60,9 @@ function joinRoom() {
     console.log(response);
   });
   //We should really wait for the server to respond, but for now we'll just leave the page
-  router.push('/character');
+  setTimeout(() => {
+    router.push('/character');
+  }, 3000);
 }
 
 onMounted(() => {
