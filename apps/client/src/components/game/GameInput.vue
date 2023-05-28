@@ -33,6 +33,6 @@ onMounted(() => {
     <ul>
       <li v-for="(player, index) in players" :key="index">{{ player }}</li>
     </ul>
-    <input v-model="newPlayer" placeholder="Enter a guess" />
+    <input class="h-10 bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 p-2.5" v-model="newPlayer" placeholder="Enter a guess" />
   </div>
 </template>
