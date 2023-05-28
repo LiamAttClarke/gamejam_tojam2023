@@ -1,7 +1,7 @@
 import { RoomManager } from '../RoomManager';
 import broadcastRoomState from './rooms/broadcastRoomState';
 import { updatePhysicsBody } from '../physics';
-
+import { Room } from "../Room";
 
 
 
