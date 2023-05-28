@@ -3,10 +3,10 @@ import PhaserRenderer from './components/GameRenderer.vue'
 import { GameManager } from './GameManager'
 import { useGameManagerStore } from './stores/gameManager'
 import type { Player } from '../../shared/types/Player'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, inject } from 'vue'
 
 const gameManager = GameManager.getInstance()
-const gameManagerStore = useGameManagerStore()
+const useGameManagerStore = inject('gameManager');
 
 const liam: Player = {
   id: crypto.randomUUID(),
@@ -36,18 +36,26 @@ function onKeyDown(event: KeyboardEvent) {
   const player = gameManager.getPlayer(liam.id)
   if (!player) return
   const acceleration = [0, 0]
+  //aw x=-1 y=-1
+  //wd x=1 y=1
+  //as x=-1 y=-1
+  //sd x=1 y=-1
   switch (event.key) {
     case 'w':
       acceleration[1] -= aMag
+      //x=0, y=1
       break
     case 'a':
       acceleration[0] -= aMag
+      //x=-1, y=0
       break
     case 's':
       acceleration[1] += aMag
+      //x=0, y=-1
       break
     case 'd':
       acceleration[0] += aMag
+      //x=1, y=0
       break
     case 'q':
       isPooping.value = true

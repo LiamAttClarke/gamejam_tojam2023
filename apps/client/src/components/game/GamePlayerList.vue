@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { GameManager } from '../../GameManager';
+import { useGameManagerStore } from './stores/gameManager';
 const gameManager = GameManager.getInstance();
 </script>
 

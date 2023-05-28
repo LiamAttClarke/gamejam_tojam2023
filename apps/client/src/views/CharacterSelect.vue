@@ -2,7 +2,7 @@
 import CharacterTile from '../components/CharacterTile.vue'
 import PlayerTile from '../components/PlayerTile.vue'
 
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 
 const selectedCharacter = ref()
 /*
@@ -23,6 +23,8 @@ function addPlayer(){
 }
 */
 
+const useGameManagerStore = inject('gameManagerStore');
+
 const players: Array<Object> = [
   {
     username: 'Artemy',
@@ -38,7 +40,7 @@ const players: Array<Object> = [
   }
 ]
 
-const joinCode: Number = 2345
+const joinCode: Number = useGameManagerStore.joinCode;
 
 function selectCharacter(character: String) {
   console.log(character, selectedCharacter.value)

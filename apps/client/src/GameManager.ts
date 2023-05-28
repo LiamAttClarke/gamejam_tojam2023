@@ -1,6 +1,7 @@
 import type { Trail } from 'shared/types/Trail';
 import type { Player } from 'shared/types/Player';
-import { Character } from './constants'
+import { Character } from './constants';
+import { io } from 'socket.io-client';
 
 // NOTE: Game store should only be mutated by a server event
 
@@ -10,6 +11,7 @@ export class GameManager {
   private _players = new Map<string, Player>();
   private _trails = new Map<string, Trail>();
   private _timer:number = 999; //This is the time for guesser to figure out the word
+  private _roomId:string = '';
 
   public static getInstance(): GameManager {
     if (!GameManager._instance) {
@@ -75,5 +77,24 @@ export class GameManager {
 
   removeTrail(trailId: string) {
     this._trails.delete(trailId);
+  }
+
+  joinGame(roomId: string) {
+    //Websocket message to join room
+    this._roomId = roomId;
+
+  }
+
+  createGame() {
+    //Websocket message to create game
+
+  }
+
+  leaveGame() {
+    //Server things to leave game
+  }
+
+  startGame() {
+    //Server things to start game
   }
 }
