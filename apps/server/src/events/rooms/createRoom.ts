@@ -4,6 +4,7 @@ import constants from "../../../../shared/constants";
 import onDirectionChange from "../onDirectionChange";
 import onNameChange from "../onNameChange";
 import onCharacterChange from "../onCharacterChange";
+import onGuessReceive from "../onGuessReceive";
 
 export default (socket: Socket) => () => {
   console.log(`create room, socket id: ${socket.id}`);

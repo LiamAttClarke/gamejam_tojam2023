@@ -8,6 +8,8 @@ import { Game, GameStatus } from "../../shared/types/Game";
 import { updatePhysicsBody } from "./physics";
 import { Trail } from "../../shared/types/Trail";
 import crypto from 'crypto';
+import * as fs from 'fs';
+
 
 // FOR: LIAM
 
@@ -47,6 +49,14 @@ export class Room {
     durationMS: number;
     guesserId?: string;
   }) {
+     // nice to have: read this file only once and put it in the room manager
+    const jsonString = fs.readFileSync('./matches.json', 'utf-8');
+    const jsonArray: { term: string; clue: string; }[] = JSON.parse(jsonString);
+
+    // Randomly select a term and clue
+    const randomIndex = Math.floor(Math.random() * jsonArray.length);
+    const randomTerm = jsonArray[randomIndex].term;
+    const randomClue = jsonArray[randomIndex].clue;
     this._game = {
       id: roomId,
       status: GameStatus.Inactive,
@@ -54,12 +64,13 @@ export class Room {
       guesserId: options.guesserId || "",
       startTimeMS: 0,
       lastUpdateMS: 0,
-      term: '',
-      clue: '',
+      term: randomTerm,
+      clue: randomClue,
       guesses: [],
       players: [],
       trails: []
     };
+
   }
 
   private getNextMatch(): { term: string, clue: string } {
