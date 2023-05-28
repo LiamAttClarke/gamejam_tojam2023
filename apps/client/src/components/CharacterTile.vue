@@ -27,7 +27,7 @@ const props = defineProps({
       @change="$emit('change', character)"
       name="char"
     />
-    <div class="tile">
+    <div class="tile bg-white">
       <img :src="`/assets/avatars/${character}.png`" alt="character" width="100" height="100" />
     </div>
   </label>
