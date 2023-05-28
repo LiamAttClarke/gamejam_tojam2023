@@ -20,7 +20,7 @@ const props = defineProps({
 <template>
   <div class="tile">
     <div class="text-center pb-1">{{ username }}</div>
-    <img :src="`/assets/${character}.png`" alt="character" width="60" height="60" />
+    <img :src="`/assets/avatars/${character}.png`" alt="character" width="60" height="60" />
   </div>
 </template>
 
