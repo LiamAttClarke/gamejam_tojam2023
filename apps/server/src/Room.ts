@@ -50,7 +50,7 @@ export class Room {
     guesserId?: string;
   }) {
      // nice to have: read this file only once and put it in the room manager
-    const jsonString = fs.readFileSync('./matches.json', 'utf-8');
+    const jsonString = fs.readFileSync('./src/matches.json', 'utf-8');
     const jsonArray: { term: string; clue: string; }[] = JSON.parse(jsonString);
 
     // Randomly select a term and clue
