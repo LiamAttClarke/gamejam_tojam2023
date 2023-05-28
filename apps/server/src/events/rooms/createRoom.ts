@@ -18,6 +18,7 @@ export default (socket: Socket) => () => {
   socket.on(constants.MSG_TYPES.DIRECTION_CHANGE, onDirectionChange(socket));
   socket.on(constants.MSG_TYPES.NAME_CHANGE, onNameChange(socket));
   socket.on(constants.MSG_TYPES.CHARACTER_CHANGE, onCharacterChange(socket));
+  socket.on(constants.MSG_TYPES.GUESS_RECEIVE, onGuessReceive(socket));
   socket.on(constants.MSG_TYPES.TRAIL_ON, onTrailOn(socket));
   socket.on(constants.MSG_TYPES.TRAIL_OFF, onTrailOff(socket));
 }
