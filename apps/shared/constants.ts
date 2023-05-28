@@ -11,6 +11,7 @@ export default Object.freeze({
     CHARACTER_CHANGE: 'character_change',
     GUESS_RECEIVE: "guess_receive",
     TRAIL_ON: "trail_on",
+    TRAIL_OFF: "trail_off",
   },
   MOVE_DIRECTIONS: {
     UP: 'up',
