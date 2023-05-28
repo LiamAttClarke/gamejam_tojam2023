@@ -2,6 +2,7 @@ import { RoomManager } from '../RoomManager';
 import broadcastRoomState from './rooms/broadcastRoomState';
 import { updatePhysicsBody } from '../physics';
 import { Room } from "../Room";
+import { GameStatus } from "../../../shared/types/Game";
 
 export const onUpdateClients = () => {
   console.clear();
@@ -35,6 +36,7 @@ export const onUpdateClients = () => {
       updatePhysicsBody((currentTime-player.body.lastDeltaT)/1000, player.body);
       if (winningConditionSatisfied(room)) {
         console.log("Game complete!");
+        room.game!.status = GameStatus.Victory;
       }
 
     }
