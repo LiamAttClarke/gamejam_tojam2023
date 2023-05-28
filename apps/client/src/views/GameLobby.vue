@@ -50,13 +50,8 @@ function joinRoom() {
   }
   roomIdInput.value = roomIdInput.value.toLowerCase();
 
-  if(socket.value){
-    socket.value = io('http://localhost:3000');
-  }
-
   socket.value.emit('join_room', roomIdInput.value, (response) => {
     // Handle the response from the server
-
     console.log(response);
   });
   //We should really wait for the server to respond, but for now we'll just leave the page
@@ -74,7 +69,7 @@ onMounted(() => {
   socket.value.on('broadcast_room_state',(response) => {
     const data = JSON.parse(response);
     // Handle the response from the server
-    //console.log(JSON.parse(response));
+    console.log(JSON.parse(response));
     useGameManagerStore.setPlayers(data.players);
     useGameManagerStore.setRoomId(data.id);
   });

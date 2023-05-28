@@ -33,6 +33,22 @@ const useGameManagerStore = inject('gameManager');
 
 const joinCode: Number = ref(useGameManagerStore.roomId);
 
+// Debounce function to delay action execution
+let debounceTimer: ReturnType<typeof setTimeout>;
+
+const handleInputChange = (event: InputEvent) => {
+  // Clear the previous debounce timer
+  clearTimeout(debounceTimer);
+
+  // Set a new debounce timer
+  debounceTimer = setTimeout(() => {
+    const { value } = event.target as HTMLInputElement;
+    if (value.length < 1) return;
+    console.log('Input value changed:', (event.target as HTMLInputElement).value);
+    useGameManagerStore.emitNameChange(value);
+  }, 1000); // 1000 milliseconds = 1 second
+};
+
 function selectCharacter(character: String) {
   console.log(character, selectedCharacter.value)
   useGameManagerStore.emitCharacterChange(character);
@@ -47,6 +63,7 @@ function selectCharacter(character: String) {
 
     <div class="center-container col-span-6 px-4">
       <h1 class="uppercase text-3xl font-bold tracking-tight text-black">Select your pooper!</h1>
+      <input type="text" class="w-full border border-gray-300 rounded-md" @input="handleInputChange">
       <div class="button-container">
         <CharacterTile
           class="btn"
