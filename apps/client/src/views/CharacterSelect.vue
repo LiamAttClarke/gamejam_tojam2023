@@ -119,7 +119,7 @@ function startGame() {
         </CharacterTile>
       </div>
       <div class="flex justify-center items-center mt-10">
-        <ButtonBasic :disabled="loading" class="px-36 mx-auto" :class="{'bg-red-200 hover:bg-red-200' : loading }" @click="startGame"><span v-if="loading">Loading</span><span v-else>Start Game</span></ButtonBasic>
+        <ButtonBasic :disabled="loading" class="px-36 mx-auto" :class="{'bg-blue-200 hover:bg-blue-200' : loading }" @click="startGame"><span v-if="loading">Loading</span><span v-else>Start Game</span></ButtonBasic>
       </div>
     </div>
 
