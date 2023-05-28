@@ -18,7 +18,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="tile">
+  <div class="tile bg-white">
     <div class="text-center pb-1">{{ username }}</div>
     <img :src="`/assets/avatars/${character}.png`" alt="character" width="60" height="60" />
   </div>
