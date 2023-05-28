@@ -135,7 +135,16 @@ export class Room {
     const trail = this.getTrail(player.currentTrailId as string);
     if (!trail) throw new Error(`Could not find current trail for player '${playerId}'.`);
 
-    trail.points.push(position);
+    // If the previous point is for the same coord, don't add it.
+    let prevPoint = null;
+    if(trail.points.length > 0) {
+      prevPoint = trail.points[trail.points.length - 1];
+    }
+    if(prevPoint && (prevPoint.x === position.x) && (prevPoint.y === position.y)) {
+      return;
+    }
+
+    trail.points.push(JSON.parse(JSON.stringify(position)));
   }
 
   startTrail(playerId: string) {
