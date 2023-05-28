@@ -21,6 +21,7 @@ import { ref, onMounted, inject, onUnmounted } from 'vue'
 import ButtonBasic from '../components/ButtonBasic.vue';
 import { io } from 'socket.io-client';
 import { useRouter } from 'vue-router';
+//import socket from '../sockets';
 //import { useGameManagerStore } from '../stores/gameManager';
 const roomIdInput = ref('');
 const socket = ref();
@@ -74,6 +75,8 @@ onMounted(() => {
     useGameManagerStore.setRoomId(data.id);
   });
 });
+//unload the welcome scene
+useGameManagerStore.game.scene.remove('welcome');
 /*
 onUnmounted(() => {
   if (socket.value) {
