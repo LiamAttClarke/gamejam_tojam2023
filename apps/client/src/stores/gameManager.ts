@@ -91,7 +91,7 @@ export const useGameManagerStore = defineStore('gameManager', {
       })
     },
     sendGuess(guess: string) {
-      this._socket?.emit('guess', guess, (response) => {
+      this._socket?.emit('guess_receive', guess, (response) => {
         // Handle the response from the server
         console.log(response)
       })
