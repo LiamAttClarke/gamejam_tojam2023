@@ -4,7 +4,7 @@ import Welcome from './views/Welcome.vue';
 import CharacterSelect from './views/CharacterSelect.vue';
 import Game from './components/GameRenderer.vue';
 import Lobby from './views/GameLobby.vue';
-import GameRoom from './components/GameRoom.vue';
+import GameRoom from './views/GameRoom.vue';
 
 
 const routes: Array<RouteRecordRaw> = [

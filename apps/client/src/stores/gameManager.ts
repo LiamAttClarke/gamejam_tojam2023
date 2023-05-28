@@ -3,6 +3,7 @@ import type { Trail } from 'shared/types/Trail';
 import type { Player } from 'shared/types/Player';
 import type { IVector } from 'shared/types/IVector';
 import { CharacterKind } from "shared/types/Character";
+import Phaser from 'phaser'
 
 // Define the store
 export const useGameManagerStore = defineStore('gameManager', {
@@ -10,6 +11,7 @@ export const useGameManagerStore = defineStore('gameManager', {
     _players: new Map<string, Player>(),
     _trails: new Map<string, Trail>(),
     _socket: null as WebSocket | null,
+    _game: null,
     _timer: 0,
     _roomId: '',
     _joinCode: '3333', //Deprecated
@@ -74,6 +76,9 @@ export const useGameManagerStore = defineStore('gameManager', {
         // Handle the response from the server
         console.log(response);
       });
+    },
+    setGame(phaserGame: Phaser.Game) {
+      this._game = phaserGame;
     }
   },
 });
