@@ -166,6 +166,10 @@ export class Room {
     return this._game?.players.find(p => p.id === playerId) || null;
   }
 
+  getPlayers(): Player[] {
+    return this._game.players;
+  }
+
   getTrail(trailId: string): Trail|null {
     return this._game?.trails.find(t => t.id === trailId) || null;
   }

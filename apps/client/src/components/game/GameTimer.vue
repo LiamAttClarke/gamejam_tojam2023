@@ -1,12 +1,17 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import { GameManager } from '../../GameManager';
-const gameManager = GameManager.getInstance();
 
+const gameManager = GameManager.getInstance();
+const useGameManagerStore = inject('gameManager')
+
+onMounted(() => {
+console.log(useGameManagerStore.timer)
+});
 </script>
 
 <template>
   <div>
-    <h1>Time Left: {{ gameManager.timer }}</h1>
+    <h1>Time Left: {{ useGameManagerStore.timer }}</h1>
   </div>
 </template>
