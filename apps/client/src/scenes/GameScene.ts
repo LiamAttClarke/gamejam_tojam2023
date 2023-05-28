@@ -2,17 +2,22 @@ import type { Trail } from "shared/types/Trail";
 import Phaser from "phaser";
 import type { Player } from "shared/types/Player";
 import { GameManager } from "@/GameManager";
+import { useGameManagerStore } from '../stores/gameManager';
+import { ref, Ref } from 'vue';
 
-export class Game extends Phaser.Scene {
+export class GameScene extends Phaser.Scene {
   private _gameManager: GameManager;
+  private _gameManagerStore: ReturnType<typeof useGameManagerStore>;
   /** Player.id -> Phaser.GameObject */
   private _playerObjs = new Map<string, Phaser.GameObjects.Sprite>();
   /** Trail.id -> Phaser.GameObject */
   private _trailObjs = new Map<string, Phaser.GameObjects.Curve>();
 
   constructor() {
-    super();
+    super('game');
     this._gameManager = GameManager.getInstance();
+    this._gameManagerStore = useGameManagerStore();
+    console.log(this._gameManagerStore);
   }
 
   preload () {
@@ -20,7 +25,7 @@ export class Game extends Phaser.Scene {
   }
 
   create () {
-    for (const player of this._gameManager.players) {
+    for (const player of Object.values(this._gameManagerStore.players)) {
       this.addPlayer(player);
     }
     for (const trail of this._gameManager.trails) {
@@ -30,6 +35,7 @@ export class Game extends Phaser.Scene {
 
   update(time: number, delta: number): void {
     // TODO: Only update if dirty
+    /*
     for (const player of this._gameManager.players) {
       this.updatePlayer(player);
     }
@@ -40,7 +46,7 @@ export class Game extends Phaser.Scene {
       } catch (e) {
         this.addTrail(trail);
       }
-    }
+    }*/
   }
 
   private addPlayer(player: Player) {
@@ -48,6 +54,13 @@ export class Game extends Phaser.Scene {
     obj.displayWidth = 32;
     obj.displayHeight = 32;
     this._playerObjs.set(player.id, obj);
+  }
+
+  private setPlayers(players: Player[]) {
+    console.log(players);
+    for (const player of players) {
+      this.addPlayer(player);
+    }
   }
 
   private addTrail(trail: Trail) {

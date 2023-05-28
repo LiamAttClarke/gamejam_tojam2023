@@ -74,9 +74,12 @@ onMounted(() => {
     useGameManagerStore.setPlayers(data.players);
     useGameManagerStore.setRoomId(data.id);
   });
+
+  useGameManagerStore.game.scene.remove('welcome');
+  useGameManagerStore.game.scene.remove('audio');
 });
 //unload the welcome scene
-useGameManagerStore.game.scene.remove('welcome');
+
 /*
 onUnmounted(() => {
   if (socket.value) {
