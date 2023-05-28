@@ -78,8 +78,20 @@ export const useGameManagerStore = defineStore('gameManager', {
         // Handle the error or provide a default behavior
       }
     },
+    emitStartTrail() {
+      this._socket?.emit('trail_on', name, (response) => {
+        // Handle the response from the server
+        console.log(response)
+      })
+    },
+    emitStopTrail() {
+      this._socket?.emit('trail_off', name, (response) => {
+        // Handle the response from the server
+        console.log(response)
+      })
+    },
     sendGuess(guess: string) {
-      this._socket?.emit('guess', guess, (response) => {
+      this._socket?.emit('guess_receive', guess, (response) => {
         // Handle the response from the server
         console.log(response)
       })
