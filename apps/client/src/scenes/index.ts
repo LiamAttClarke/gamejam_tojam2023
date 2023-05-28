@@ -1,3 +1,3 @@
-export { Scene1 } from "./Scene1";
+export { Game } from "./Game";
 export { AudioScene } from "./AudioScene";
 export { WelcomeScene } from "./WelcomeScene";

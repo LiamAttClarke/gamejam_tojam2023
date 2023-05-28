@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import Phaser from 'phaser'
-import * as SceneMap from '../scenes'
+import { ref, onMounted, inject } from 'vue'
 
 const container = ref()
 const game = ref()
@@ -10,7 +8,11 @@ const props = defineProps<{
   placeholder: string
 }>()
 
+const useGameManagerStore = inject('gameManager');
+
 onMounted(() => {
+  console.log(useGameManagerStore.game.scene)
+  /*
   game.value = new Phaser.Game({
     type: Phaser.AUTO,
     parent: container.value,
@@ -19,6 +21,7 @@ onMounted(() => {
       mode: Phaser.Scale.FIT
     }
   })
+  */
 })
 </script>
 

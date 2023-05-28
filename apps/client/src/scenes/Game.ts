@@ -3,7 +3,7 @@ import Phaser from "phaser";
 import type { Player } from "shared/types/Player";
 import { GameManager } from "@/GameManager";
 
-export class Scene1 extends Phaser.Scene {
+export class Game extends Phaser.Scene {
   private _gameManager: GameManager;
   /** Player.id -> Phaser.GameObject */
   private _playerObjs = new Map<string, Phaser.GameObjects.Sprite>();

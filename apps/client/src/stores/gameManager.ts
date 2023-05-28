@@ -22,6 +22,7 @@ export const useGameManagerStore = defineStore('gameManager', {
     timer: (state) => state._timer,
     roomId: (state) => state._roomId,
     joinCode: (state) => state._joinCode,
+    game: (state) => state._game,
   },
   actions: {
     addPlayer(player: Player) {
@@ -54,6 +55,12 @@ export const useGameManagerStore = defineStore('gameManager', {
     },
     emitNameChange(name: string){
       this._socket?.emit('name_change', name, (response) => {
+        // Handle the response from the server
+        console.log(response);
+      });
+    },
+    emitStartGame(){
+      this._socket?.emit('start_game', (response) => {
         // Handle the response from the server
         console.log(response);
       });

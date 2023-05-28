@@ -2,6 +2,9 @@
 import CharacterTile from '../components/CharacterTile.vue'
 import PlayerTile from '../components/PlayerTile.vue'
 import { CharacterKind } from '../../../shared/types/Character'
+import { useRouter } from 'vue-router';
+import ButtonBasic from '../components/ButtonBasic.vue';
+const router = useRouter();
 
 import { ref, inject,toRef   } from 'vue'
 import type { Player } from 'shared/types/Player';
@@ -53,6 +56,15 @@ function selectCharacter(character: String) {
   console.log(character, selectedCharacter.value)
   useGameManagerStore.emitCharacterChange(character);
 }
+
+function startGame() {
+  //useGameManagerStore.emitStartGame();
+  console.log('start game');
+  //We should really wait for the server to respond, but for now we'll just leave the page
+  setTimeout(() => {
+    router.push('/room');
+  }, 3000);
+}
 </script>
 
 <template>
@@ -99,6 +111,7 @@ function selectCharacter(character: String) {
         :character="player[1].character"
       ></PlayerTile>
     </div>
+    <ButtonBasic class="mt-10 px-36 z-10" @click="startGame">Start Game</ButtonBasic>
   </div>
 </template>
 
