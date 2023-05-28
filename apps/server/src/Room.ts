@@ -214,7 +214,7 @@ export class Room {
       name: "Anonymous",
       body: {
         lastDeltaT: new Date().getTime(),
-        position: new Vector(0, 0),
+        position: new Vector(400, 300),
         lastPosition: new Vector(0, 0),
         acceleration: new Vector(0, 0),
         mass: options?.mass || 100,
