@@ -11,7 +11,7 @@
     <router-link
     to="/lobby"
     >
-    <ButtonBasic class="px-36">Get Started!</ButtonBasic>
+    <ButtonBasic class="mt-10 px-36">Get Started!</ButtonBasic>
   </router-link>
   </div>
   
