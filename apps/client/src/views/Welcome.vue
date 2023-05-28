@@ -27,6 +27,7 @@ onMounted(() => {
     scene: [SceneMap.AudioScene, SceneMap.WelcomeScene, SceneMap.GameScene],
     scale: {
       mode: Phaser.Scale.NONE,
+      autoCenter: Phaser.Scale.CENTER_BOTH,
       width: 800,
       height: 600,
     }
@@ -75,4 +76,5 @@ onUnmounted(() => {
       background-position: 100% 50%;
     }
   }
+
 </style>

@@ -9,6 +9,8 @@ const router = useRouter()
 import { ref, inject, toRef } from 'vue'
 import type { Player } from 'shared/types/Player'
 
+let loading = ref(false);
+
 const selectedCharacter = ref()
 /*
 import RoundButton from './RoundButton.vue';
@@ -59,6 +61,9 @@ function selectCharacter(character: CharacterKind) {
 function startGame() {
   //useGameManagerStore.emitStartGame();
   console.log('start game')
+  
+  loading.value = true;
+ 
   //We should really wait for the server to respond, but for now we'll just leave the page
   setTimeout(() => {
     router.push('/room')
@@ -112,7 +117,7 @@ function startGame() {
         </CharacterTile>
       </div>
       <div class="flex justify-center items-center mt-10">
-        <ButtonBasic class="px-36 mx-auto" @click="startGame">Start Game</ButtonBasic>
+        <ButtonBasic :disabled="loading" class="px-36 mx-auto" :class="{'bg-red-400' : loading }" @click="startGame"><span v-if="!loading">Start Game</span><span v-if="loading">Loading</span></ButtonBasic>
       </div>
     </div>
 
