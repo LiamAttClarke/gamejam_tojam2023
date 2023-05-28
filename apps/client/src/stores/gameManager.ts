@@ -20,10 +20,20 @@ export const useGameManagerStore = defineStore('gameManager', {
     joinCode: (state) => state._joinCode,
   },
   actions: {
+    addPlayer(player: Player) {
+      this._players.set(player.id, player);
+      console.log(`Added player '${player.id}'`);
+    },
     getPlayer(playerId: string){
       const player = this._players.get(playerId);
       if (!player) throw new Error(`Player '${playerId}' not found.`);
         return player;
+    },
+    setPlayers(players: Player[]) {
+      this._players = new Map(players.map(p => [p.id, p]));
+    },
+    setRoomId(roomId: string) {
+      this._roomId = roomId;
     },
     setRoom(roomId: string){
       this._roomId = roomId;

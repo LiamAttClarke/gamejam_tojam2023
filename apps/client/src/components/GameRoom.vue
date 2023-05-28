@@ -13,15 +13,15 @@ function addPlayer(){
 
 <template>
   <div class="container mx-auto center">
+    <GameTimer class="border w-full"></GameTimer>
     <div class="flex flex-row">
-
-      <GamePlayerList class=" border basis-1/4"></GamePlayerList>
-      <GameTimer class=" border w-full"></GameTimer>
-
-      <GameInput class=" border w-full"></GameInput>
-      <GameRenderer class="w-full"></GameRenderer>
+      <div>
+        <GamePlayerList class="border basis-1/4"></GamePlayerList>
+        <GameInput class=" border w-full"></GameInput>
+      </div>
+      <GameRenderer class="w-full h-full"></GameRenderer>
       
     </div>
-    </div>
+  </div>
   
 </template>
