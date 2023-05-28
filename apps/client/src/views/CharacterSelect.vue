@@ -51,7 +51,7 @@ const handleInputChange = (event: InputEvent) => {
   }, 1000) // 1000 milliseconds = 1 second
 }
 
-function selectCharacter(character: String) {
+function selectCharacter(character: CharacterKind) {
   console.log(character, selectedCharacter.value)
   useGameManagerStore.emitCharacterChange(character)
 }

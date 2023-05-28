@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia';
-import type { Trail } from 'shared/types/Trail';
-import type { Player } from 'shared/types/Player';
-import type { IVector } from 'shared/types/IVector';
-import { CharacterKind } from "shared/types/Character";
+import { defineStore } from 'pinia'
+import type { Trail } from 'shared/types/Trail'
+import type { Player } from 'shared/types/Player'
+import type { IVector } from 'shared/types/IVector'
+import { CharacterKind } from 'shared/types/Character'
 import Phaser from 'phaser'
 
 // Define the store
@@ -14,7 +14,7 @@ export const useGameManagerStore = defineStore('gameManager', {
     _game: null,
     _timer: 0,
     _roomId: '',
-    _joinCode: '3333', //Deprecated
+    _joinCode: '3333' //Deprecated
   }),
   getters: {
     players: (state) => state._players,
@@ -22,70 +22,70 @@ export const useGameManagerStore = defineStore('gameManager', {
     timer: (state) => state._timer,
     roomId: (state) => state._roomId,
     joinCode: (state) => state._joinCode,
-    game: (state) => state._game,
+    game: (state) => state._game
   },
   actions: {
     addPlayer(player: Player) {
-      this._players.set(player.id, player);
-      console.log(`Added player '${player.id}'`);
+      this._players.set(player.id, player)
+      console.log(`Added player '${player.id}'`)
     },
-    getPlayer(playerId: string){
-      const player = this._players.get(playerId);
-      if (!player) throw new Error(`Player '${playerId}' not found.`);
-        return player;
+    getPlayer(playerId: string) {
+      const player = this._players.get(playerId)
+      if (!player) throw new Error(`Player '${playerId}' not found.`)
+      return player
     },
     setPlayers(players: Player[]) {
-      this._players = new Map(players.map(p => [p.id, p]));
+      this._players = new Map(players.map((p) => [p.id, p]))
     },
     setRoomId(roomId: string) {
-      this._roomId = roomId;
+      this._roomId = roomId
     },
-    setRoom(roomId: string){
-      this._roomId = roomId;
+    setRoom(roomId: string) {
+      this._roomId = roomId
     },
     setSocket(socket: WebSocket) {
-      this._socket = socket;
+      this._socket = socket
     },
-    sendInput(input: IVector){
-      console.log(`Sending input '${JSON.stringify(input)}'`);
+    sendInput(input: IVector) {
+      console.log(`Sending input '${JSON.stringify(input)}'`)
       this._socket.emit('direction_change', input, (response) => {
         // Handle the response from the server
-        console.log(response);
-      });
+        console.log(response)
+      })
     },
-    emitNameChange(name: string){
+    emitNameChange(name: string) {
       this._socket?.emit('name_change', name, (response) => {
         // Handle the response from the server
-        console.log(response);
-      });
+        console.log(response)
+      })
     },
-    emitStartGame(){
+    emitStartGame() {
       this._socket?.emit('start_game', (response) => {
         // Handle the response from the server
-        console.log(response);
-      });
+        console.log(response)
+      })
     },
     emitCharacterChange(character: CharacterKind) {
-      if (Object.values(CharacterKind).includes(ch)) {
+      if (Object.values(CharacterKind).includes(character)) {
         // Valid character kind
         // Perform your logic here
         this._socket?.emit('character_change', character, (response) => {
           // Handle the response from the server
-          console.log(response);
-        });
+          console.log(response)
+        })
       } else {
         // Invalid character kind
         // Handle the error or provide a default behavior
       }
     },
-    sendGuess(guess: string){
+    sendGuess(guess: string) {
       this._socket?.emit('guess', guess, (response) => {
         // Handle the response from the server
-        console.log(response);
-      });
+        console.log(response)
+      })
     },
     setGame(phaserGame: Phaser.Game) {
-      this._game = phaserGame;
+      this._game = phaserGame
     }
-  },
-});
+  }
+})
